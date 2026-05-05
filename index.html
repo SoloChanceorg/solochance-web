@@ -67,7 +67,6 @@
         :root {
             --accent:       #4f46e5;
             --accent-dark:  #4338ca;
-            --accent-bg:    #eef2ff;
             --surface:      #ffffff;
             --bg:           #f1f5f9;
             --border:       #e2e8f0;
@@ -1040,6 +1039,9 @@
                 btn.textContent = 'Copy';
                 btn.classList.remove('copied');
             }, 2000);
+        }).catch(function () {
+            btn.textContent = 'Failed';
+            setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
         });
     }
 
@@ -1108,7 +1110,8 @@
 (function () {
     const _orig = calculateHashrate;
     calculateHashrate = async function () {
-        await _orig();
+        const ok = await _orig();
+        if (!ok) return;
         const tbl = document.querySelector('.result-table');
         if (!tbl) return;
         hasCalculated = true;
@@ -1148,10 +1151,10 @@
 (function(){
     var texts = [
         "A pool specifically engineered for your Bitaxe and any small hashrate miner.",
-        "Tired of submitting terahashes of shares with no reward? Join solo100.org.",
+        "A pool where your few T difficulty shares actually matter.",
         "A pool, a game, both: claim your position in the best 100 and win a reward in Bitcoin.",
         "What happens if 100 friends hash for each other and split the reward when they find a block? solo100.org.",
-        "Finally a Bitcoin pool where you mine a real reward, not a few satoshis or impossible digging for a whole solo block."
+        "Finally a pool for small hashrate devices — no dust from proportional pools, no impossible odds of solo mining."
     ];
     document.getElementById('announcement-text').textContent = texts[Math.floor(Math.random() * texts.length)];
 }());

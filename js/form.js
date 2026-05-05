@@ -50,6 +50,7 @@ async function calculateHashrate() {
     el.calcBtn.disabled = true;
     el.calcBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Calculating...';
 
+    let success = false;
     try {
         const response = await fetch(apiUrl);
 
@@ -80,6 +81,7 @@ async function calculateHashrate() {
             (data.untilLastMiningRewardBlockChanceText ?? '').toString()
         );
 
+        success = true;
     } catch (error) {
         console.error('Calculation failed:', error);
         alert('Could not fetch data. Please check your connection and try again.');
@@ -87,6 +89,7 @@ async function calculateHashrate() {
         el.calcBtn.disabled = false;
         el.calcBtn.innerHTML = 'Calculate';
     }
+    return success;
 }
 
 // ── Enter key support ─────────────────────────────────────────────────────

@@ -50,7 +50,6 @@
         :root {
             --neon-green: #00ff41;
             --neon-cyan: #00f5ff;
-            --neon-purple: #bf00ff;
             --neon-red: #ff003c;
             --panel-bg: rgba(0, 10, 2, 0.85);
             --border-color: #00ff4155;
@@ -316,8 +315,6 @@
             text-shadow: 0 0 8px rgba(255, 140, 0, 0.7);
             font-weight: bold;
         }
-
-        .result-table tr.dim td { color: #444; text-shadow: none; }
 
         /* Scan-in animation */
         @keyframes scanIn {
@@ -901,6 +898,9 @@
                 btn.textContent = '[ COPY ]';
                 btn.classList.remove('copied');
             }, 2000);
+        }).catch(function () {
+            btn.textContent = '[ FAIL ]';
+            setTimeout(function () { btn.textContent = '[ COPY ]'; }, 2000);
         });
     }
 </script>
@@ -929,6 +929,7 @@ async function calculateHashrate() {
         calcBtn.innerHTML = '<span class="spinner"></span> COMPUTING...';
 
         const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`API error: ${response.status}`);
         const data = await response.json();
 
         // Force re-trigger scan-in animation
@@ -936,23 +937,23 @@ async function calculateHashrate() {
         const rows = tbody.querySelectorAll('tr');
         rows.forEach(r => { r.style.animation = 'none'; r.offsetHeight; r.style.animation = ''; });
 
-        document.getElementById('your-hashrate').innerHTML    = data.currentHashrateText;
-        document.getElementById('network-hashrate').innerHTML = data.networkHashrateText;
-        document.getElementById('block-interval').innerHTML   = data.blockIntervalInMinutes + ' minutes';
-        document.getElementById('price').innerHTML = Number(data.price).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' USD';
-        document.getElementById('block-reward').innerHTML = data.blockReward + ' ' + currency;
-        document.getElementById('block-reward-usd').innerHTML = Number(data.blockRewardInUSD).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' USD';
-        document.getElementById('chance-per-block').innerHTML  = data.blockChanceText;
-        document.getElementById('chance-per-hour').innerHTML   = data.hourChanceText;
-        document.getElementById('chance-per-day').innerHTML    = data.dayChanceText;
-        document.getElementById('chance-per-week').innerHTML   = data.weekChanceText;
-        document.getElementById('chance-per-month').innerHTML  = data.monthChanceText;
-        document.getElementById('chance-per-year').innerHTML   = data.yearChanceText;
+        document.getElementById('your-hashrate').textContent    = data.currentHashrateText;
+        document.getElementById('network-hashrate').textContent = data.networkHashrateText;
+        document.getElementById('block-interval').textContent   = data.blockIntervalInMinutes + ' minutes';
+        document.getElementById('price').textContent = Number(data.price).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' USD';
+        document.getElementById('block-reward').textContent = data.blockReward + ' ' + currency;
+        document.getElementById('block-reward-usd').textContent = Number(data.blockRewardInUSD).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' USD';
+        document.getElementById('chance-per-block').textContent  = data.blockChanceText;
+        document.getElementById('chance-per-hour').textContent   = data.hourChanceText;
+        document.getElementById('chance-per-day').textContent    = data.dayChanceText;
+        document.getElementById('chance-per-week').textContent   = data.weekChanceText;
+        document.getElementById('chance-per-month').textContent  = data.monthChanceText;
+        document.getElementById('chance-per-year').textContent   = data.yearChanceText;
 
         const halvingText = (data.untilNextHalvingChanceText ?? '').toString().trim();
         const halvingRow  = document.getElementById('halving-row');
         if (halvingText) {
-            document.getElementById('chance-by-halving').innerHTML = halvingText;
+            document.getElementById('chance-by-halving').textContent = halvingText;
             halvingRow.style.display = '';
         } else {
             halvingRow.style.display = 'none';
@@ -961,7 +962,7 @@ async function calculateHashrate() {
         const lastBlockText = (data.untilLastMiningRewardBlockChanceText ?? '').toString().trim();
         const lastBlockRow  = document.getElementById('last-block-row');
         if (lastBlockText) {
-            document.getElementById('chance-by-last-block').innerHTML = lastBlockText;
+            document.getElementById('chance-by-last-block').textContent = lastBlockText;
             lastBlockRow.style.display = '';
         } else {
             lastBlockRow.style.display = 'none';
@@ -981,8 +982,8 @@ async function calculateHashrate() {
     }
 }
 
-document.getElementById('inputHashrate').addEventListener('keypress', function (e) {
-    if (e.keyCode === 13) { e.preventDefault(); calculateHashrate(); }
+document.getElementById('inputHashrate').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); calculateHashrate(); }
 });
 
 (function () {
@@ -1014,10 +1015,10 @@ document.getElementById('inputHashrate').addEventListener('keypress', function (
 (function(){
     var texts = [
         "A POOL SPECIFICALLY ENGINEERED FOR YOUR BITAXE AND ANY SMALL HASHRATE MINER.",
-        "TIRED OF SUBMITTING TERAHASHES OF SHARES WITH NO REWARD? JOIN SOLO100.ORG.",
+        "A POOL WHERE YOUR FEW T DIFFICULTY SHARES ACTUALLY MATTER.",
         "A POOL, A GAME, BOTH: CLAIM YOUR POSITION IN THE BEST 100 AND WIN A REWARD IN BITCOIN.",
         "WHAT HAPPENS IF 100 FRIENDS HASH FOR EACH OTHER AND SPLIT THE REWARD WHEN THEY FIND A BLOCK? SOLO100.ORG.",
-        "FINALLY A BITCOIN POOL WHERE YOU MINE A REAL REWARD, NOT A FEW SATOSHIS OR IMPOSSIBLE DIGGING FOR A WHOLE SOLO BLOCK."
+        "FINALLY A POOL FOR SMALL HASHRATE DEVICES — NO DUST FROM PROPORTIONAL POOLS, NO IMPOSSIBLE ODDS OF SOLO MINING."
     ];
     document.getElementById('announcement-text').textContent = texts[Math.floor(Math.random() * texts.length)];
 }());

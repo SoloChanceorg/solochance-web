@@ -12,7 +12,7 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://solochance.org/pools.html">
     <meta property="og:title"       content="Curated Mining Pools — SoloChance.org">
-    <meta property="og:description" content="Hand-picked mining pools curated by SoloChance.org.">
+    <meta property="og:description" content="Curated mining pools hand-picked by SoloChance.org — experimental pools, classic options, and featured partners.">
     <meta property="og:image"       content="https://solochance.org/images/logo-domain.png">
     <meta property="og:site_name"   content="SoloChance.org">
 
@@ -171,11 +171,6 @@
             margin-top: 10px;
         }
 
-        .tagline p {
-            font-size: 1rem;
-            color: var(--text-muted);
-        }
-
         /* ── Panel ── */
         .panel {
             background: var(--surface);
@@ -192,7 +187,13 @@
             letter-spacing: .1em;
             text-transform: uppercase;
             color: var(--text-faint);
-            margin-bottom: 6px;
+            margin: 0 0 6px;
+        }
+
+        .tagline h1 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
         }
 
         .panel-desc {
@@ -384,12 +385,12 @@
     </header>
 
     <div class="tagline">
-        <p>Curated mining pools, hand-picked by SoloChance.org.</p>
+        <h1>Curated mining pools, hand-picked by SoloChance.org.</h1>
     </div>
 
     <!-- ── Category 1: Awesome Experimental Pools ─────────────────────────── -->
     <div class="panel">
-        <div class="panel-label">Awesome Experimental Pools from SoloChance.org</div>
+        <h2 class="panel-label">Awesome Experimental Pools from SoloChance.org</h2>
         <p class="panel-desc">Pools built and hosted by SoloChance.org with unique payment schemes and experimental approaches to mining.</p>
         <div class="pool-table-wrap">
             <table class="pool-table">
@@ -428,7 +429,7 @@
 
     <!-- ── Category 2: The Classic Experience ─────────────────────────────── -->
     <div class="panel">
-        <div class="panel-label">The Classic Experience</div>
+        <h2 class="panel-label">The Classic Experience</h2>
         <p class="panel-desc">Established, trusted pools with a long track record — for miners who want reliable, time-tested options.</p>
         <div class="pool-table-wrap">
             <table class="pool-table">
@@ -440,16 +441,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div class="pool-name-cell">
-                                <img src="https://parasite.space/favicon.ico" class="pool-logo" alt="parasite.space" onerror="this.style.display='none'">
-                                <a class="pool-name-link" href="https://parasite.space" target="_blank" rel="noopener">parasite.space</a>
-                            </div>
-                        </td>
-                        <td class="pool-desc-cell">Block finder earns 1 BTC outright — the rest is shared proportionally with all miners since the last block. Zero fees, Lightning Network payouts, and a 10-sat withdrawal minimum. Built for home miners under the motto "Plebs eat first."</td>
-                        <td class="action-cell"><a class="btn-visit" href="https://parasite.space" target="_blank" rel="noopener">Visit →</a></td>
-                    </tr>
                     <tr>
                         <td>
                             <div class="pool-name-cell">
@@ -479,6 +470,16 @@
                         </td>
                         <td class="pool-desc-cell">A globally deployed solo Bitcoin mining pool with a 1.5% fee. Uses BGP Anycast across 9 worldwide endpoints to automatically route miners to the closest server for minimum latency.</td>
                         <td class="action-cell"><a class="btn-visit" href="https://atlaspool.io" target="_blank" rel="noopener">Visit →</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pool-name-cell">
+                                <img src="https://parasite.space/favicon.ico" class="pool-logo" alt="parasite.space" onerror="this.style.display='none'">
+                                <a class="pool-name-link" href="https://parasite.space" target="_blank" rel="noopener">parasite.space</a>
+                            </div>
+                        </td>
+                        <td class="pool-desc-cell">Block finder earns 1 BTC outright — the rest is shared proportionally with all miners since the last block. Zero fees, Lightning Network payouts, and a 10-sat withdrawal minimum. Built for home miners under the motto "Plebs eat first."</td>
+                        <td class="action-cell"><a class="btn-visit" href="https://parasite.space" target="_blank" rel="noopener">Visit →</a></td>
                     </tr>
                 </tbody>
             </table>

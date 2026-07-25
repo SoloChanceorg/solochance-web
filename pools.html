@@ -314,6 +314,24 @@
             font-size: 0.82rem;
         }
 
+        /* ── How to choose ── */
+        .choose-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .choose-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .choose-list li strong {
+            color: var(--text);
+        }
+
         /* ── Footer ── */
         .disclaimer {
             font-size: 0.76rem;
@@ -386,12 +404,17 @@
 
     <div class="tagline">
         <h1>Curated mining pools, hand-picked by SoloChance.org.</h1>
+        <p class="panel-desc" style="max-width: 640px; margin: 12px auto 0;">
+            Solo pools aren't one-size-fits-all — they differ in payout scheme (winner-takes-all, proportional-since-last-block,
+            or top-N share splitting), fees, latency, and minimum withdrawal. The pools below are ones we've used or
+            vetted directly, grouped by the kind of experience they offer.
+        </p>
     </div>
 
     <!-- ── Category 1: Awesome Experimental Pools ─────────────────────────── -->
     <div class="panel">
         <h2 class="panel-label">Awesome Experimental Pools from SoloChance.org</h2>
-        <p class="panel-desc">Pools built and hosted by SoloChance.org with unique payment schemes and experimental approaches to mining.</p>
+        <p class="panel-desc">Pools built and hosted by SoloChance.org with unique payment schemes that break from the traditional "whole block to one winner" model — designed to give small-hashrate miners more frequent, meaningful outcomes instead of near-zero odds.</p>
         <div class="pool-table-wrap">
             <table class="pool-table">
                 <thead>
@@ -409,7 +432,7 @@
                                 <a class="pool-name-link" href="https://solo100.org" target="_blank" rel="noopener">solo100.org</a>
                             </div>
                         </td>
-                        <td class="pool-desc-cell">The first pool to gamify Bitcoin mining — it invented stratum gaming, where the top 100 addresses by share score each receive an equal cut of the block reward.</td>
+                        <td class="pool-desc-cell">The first pool to gamify Bitcoin mining. It invented stratum gaming: the top 100 addresses ranked by share score each receive an equal cut of the block reward, turning solo mining from an all-or-nothing bet into a leaderboard you can actually climb with a small miner like a Bitaxe.</td>
                         <td class="action-cell"><a class="btn-visit" href="https://solo100.org" target="_blank" rel="noopener">Visit →</a></td>
                     </tr>
                     <tr>
@@ -430,7 +453,7 @@
     <!-- ── Category 2: The Classic Experience ─────────────────────────────── -->
     <div class="panel">
         <h2 class="panel-label">The Classic Experience</h2>
-        <p class="panel-desc">Established, trusted pools with a long track record — for miners who want reliable, time-tested options.</p>
+        <p class="panel-desc">Established, trusted pools with a proven track record — from strict solo (finder keeps the block) to proportional-since-last-block payouts, without the newer leaderboard-style schemes above. For miners who want reliable, time-tested options.</p>
         <div class="pool-table-wrap">
             <table class="pool-table">
                 <thead>
@@ -484,6 +507,17 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <!-- ── How to choose ────────────────────────────────────────────────── -->
+    <div class="panel">
+        <h2 class="panel-label">How to Choose a Solo Pool</h2>
+        <ul class="choose-list">
+            <li><strong>Fee</strong> — ranges from 0% (self-hosted options like publicpool.io) to ~1.5% (atlaspool.io's global Anycast infrastructure). Lower isn't automatically better if it costs you uptime or latency.</li>
+            <li><strong>Payout scheme</strong> — strict solo (finder takes all, e.g. ckpool.org), proportional-since-last-block (parasite.space, bch.ee), or share-leaderboard hybrids (solo100.org). Pick based on whether you want pure lottery odds or smoothed-out volatility.</li>
+            <li><strong>Latency</strong> — matters more than people expect for small miners; a pool with regional/Anycast routing (atlaspool.io) reduces rejected shares versus a single distant server.</li>
+            <li><strong>Self-hosting</strong> — if you want full sovereignty over your node and payouts, publicpool.io is open-source and self-hostable rather than only available as a hosted service.</li>
+        </ul>
     </div>
 
     <hr class="divider">

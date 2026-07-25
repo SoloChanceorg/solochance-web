@@ -398,6 +398,21 @@
             margin: 28px 0;
         }
 
+        /* ── Info text (How it works / FAQ) ─────────────────────────────── */
+        .info-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+
+        .info-q {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
         /* ── Disclaimer ──────────────────────────────────────────────── */
         .disclaimer {
             font-size: 0.76rem;
@@ -954,6 +969,79 @@
         <div class="api-block">
             <code>curl 'https://api.solochance.org/getSoloChanceCalculations?currency=BTC&amp;hashrate=42&amp;hashrateUnit=TH'</code>
         </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── How it works / FAQ ──────────────────────────────────────────── -->
+    <div class="panel">
+        <div class="panel-label">How Solo Mining Chance Works</div>
+        <p class="info-text">
+            Solo mining means competing to find a block entirely on your own, instead of pooling your hashrate with
+            others and splitting the reward proportionally. Your odds of finding a block in any given attempt are
+            simply your hashrate divided by the total network hashrate — if you control 0.001% of the network's
+            hashing power, you have roughly a 0.001% chance each time a block is found somewhere on the network.
+        </p>
+        <p class="info-text">
+            Because blocks are found at fairly predictable intervals (each coin targets a specific average block
+            time), we can turn that per-block probability into a probability over a time period — an hour, a day,
+            a year — by accounting for how many blocks are expected to be mined network-wide in that window. That's
+            what the results table above shows: your rolling chance of hitting a block across different timeframes,
+            given your current hashrate.
+        </p>
+        <p class="info-text">
+            This is genuine probability, not a guarantee or a countdown. Mining is a random process — you could find
+            a block in your first minute, or never find one at the hashrate you're running. Network hashrate and
+            difficulty also shift over time (sometimes sharply, e.g. after a halving or a major miner coming
+            online/offline), which is why we pull live network data on every calculation rather than using a fixed
+            estimate.
+        </p>
+    </div>
+
+    <div class="panel">
+        <div class="panel-label">FAQ</div>
+
+        <p class="info-q">Is solo mining worth it?</p>
+        <p class="info-text">
+            Depends entirely on your hashrate relative to the network and your risk tolerance. Pool mining gives you
+            small, steady, predictable payouts proportional to your share. Solo mining gives you a lottery-ticket
+            outcome — usually nothing, occasionally the entire block reward. Miners with small hashrate (a Bitaxe,
+            a few old ASICs) are choosing volatility over steady income; that's a legitimate choice, not a mistake,
+            as long as you understand the odds going in.
+        </p>
+
+        <p class="info-q">What do KH/s, MH/s, GH/s, TH/s, PH/s, EH/s mean?</p>
+        <p class="info-text">
+            They're all hashes per second, scaled by powers of 1000: 1 MH/s = 1,000 KH/s, 1 GH/s = 1,000 MH/s,
+            1 TH/s = 1,000 GH/s, and so on up through PH/s and EH/s. Pick whichever unit matches what your mining
+            hardware reports — the calculator converts internally.
+        </p>
+
+        <p class="info-q">Why did my odds change since yesterday, even though my hashrate didn't?</p>
+        <p class="info-text">
+            Network hashrate and difficulty aren't fixed — they move with how much total hashing power is pointed
+            at the coin at any given moment. As other miners join or leave, your relative share (and therefore your
+            chance) shifts too. We fetch live network data on every calculation so the numbers reflect the current
+            state, not a stale snapshot.
+        </p>
+
+        <p class="info-q">Solo mining vs. pool mining — what's the actual tradeoff?</p>
+        <p class="info-text">
+            Pools smooth out variance by combining many miners' hashrate and paying out shares based on contributed
+            work, so income is small but steady. Solo mining keeps 100% of any block you find, but you might go
+            months (or years, at small hashrate) without finding one at all. Some newer "hybrid" pools — like the
+            top-100 or share-pooled models covered on our <a href="/pools.html">Curated Pools</a> page — sit in
+            between, spreading solo-style rewards across a small group instead of one winner or the whole network.
+        </p>
+
+        <p class="info-q">Which of the 19 supported coins should I mine solo?</p>
+        <p class="info-text" style="margin-bottom: 0;">
+            There's no universal answer — it depends on your hardware's algorithm (SHA-256 for BTC/BCH/BSV/XEC/DGB/
+            AUR/LCC, Scrypt for LTC/DOGE, RandomX for XMR, etc.), the coin's current network hashrate (lower network
+            hashrate means better solo odds for the same personal hashrate), and whether you're mining for the coin
+            itself or purely for the chance at a payout. Run the numbers above for any coin your hardware supports
+            to compare.
+        </p>
     </div>
 
     <!-- ── Footer ───────────────────────────────────────────────────────── -->

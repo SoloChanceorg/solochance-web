@@ -23,7 +23,7 @@ curl 'https://api.solochance.org/getSoloChanceCalculations?currency=BTC&hashrate
 
 | Parameter | Values |
 |---|---|
-| `currency` | `BTC`, `BCH`, `BSV`, `XEC`, `DGB`, `AUR`, `PPC`, `LCC`, `LTC`, `DOGE`, `XMR`, `RVN`, `ETC`, `BTCS`, `BC2`, `SC`, `ZEC`, `tBTC` |
+| `currency` | `BTC`, `BCH`, `BSV`, `XEC`, `DGB`, `AUR`, `PPC`, `LCC`, `LTC`, `DOGE`, `XMR`, `RVN`, `ETC`, `BTCS`, `BC2`, `SC`, `ZEC`, `QRL`, `tBTC`, `tBCH` |
 | `hashrate` | Any positive number |
 | `hashrateUnit` | `KH`, `MH`, `GH`, `TH`, `PH`, `EH` |
 

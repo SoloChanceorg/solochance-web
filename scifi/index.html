@@ -537,91 +537,6 @@
             animation: scifiSwap 0.45s ease forwards;
         }
 
-        /* ── Announcement banner ── */
-        .announcement-panel {
-            border-color: rgba(247,147,26,.4);
-            box-shadow:
-                0 0 24px rgba(247,147,26,.08),
-                inset 0 0 24px rgba(247,147,26,.04);
-        }
-
-        .announcement-body {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .announcement-logo-wrap {
-            position: relative;
-            width: 52px;
-            height: 52px;
-            flex-shrink: 0;
-        }
-
-        .announcement-logo {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 6px rgba(247,147,26,.6));
-        }
-
-        .announcement-content { flex: 1; min-width: 0; }
-
-        .announcement-badge {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.55rem;
-            letter-spacing: 3px;
-            color: #F7931A;
-            text-shadow: 0 0 8px #F7931A;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .announcement-title {
-            font-size: 0.85rem;
-            color: #F7931A;
-            text-shadow: 0 0 6px #F7931A;
-            margin-bottom: 6px;
-        }
-
-        .announcement-title a { color: #F7931A; text-decoration: none; }
-        .announcement-title a:hover { text-shadow: 0 0 16px #F7931A; }
-
-        .announcement-text {
-            font-size: 0.78rem;
-            color: var(--neon-green);
-            opacity: 0.85;
-            line-height: 1.6;
-            margin-bottom: 8px;
-        }
-
-        .announcement-cta {
-            flex-shrink: 0;
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            background: transparent;
-            border: 1px solid #F7931A;
-            color: #F7931A;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.62rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: box-shadow .2s, text-shadow .2s;
-        }
-        .announcement-cta:hover {
-            box-shadow: 0 0 20px #F7931A, 0 0 40px rgba(247,147,26,.3);
-            text-shadow: 0 0 8px #F7931A;
-            color: #F7931A;
-        }
-
-        @media (max-width: 700px) {
-            .announcement-body { flex-wrap: wrap; }
-            .announcement-cta { width: 100%; justify-content: center; }
-        }
-
         /* ── Info text (How it works / FAQ) ── */
         .info-text {
             font-size: 0.8rem;
@@ -676,26 +591,6 @@
         <a href="pools.html">[ CURATED POOLS ]</a>
         &nbsp;&middot;&nbsp;
         SIGNAL BOOST &rarr; <a href="https://twitter.com/solochanceorg" target="_blank">@solochanceorg</a>
-    </div>
-
-    <hr class="hud-divider">
-
-    <!-- ── Announcement: solo100.org ── -->
-    <p style="font-size:0.82em;font-style:italic;color:#556;margin:18px 0 16px 2px;">SOLOCHANCE.ORG TRANSMITS:<br>A NEWLY DEPLOYED POOL RUNNING A PAYMENT PROTOCOL UNLIKE ANY OTHER — THE FIRST BITCOIN MINING META-GAME EVER LAUNCHED.</p>
-    <div class="panel announcement-panel" data-label="// INCOMING TRANSMISSION //">
-        <div class="announcement-body">
-            <div class="announcement-logo-wrap">
-                <img src="https://solo100.org/images/logo-no-text-transparent.png" alt="solo100.org" class="announcement-logo">
-            </div>
-            <div class="announcement-content">
-                <div class="announcement-badge">[ NEW SIGNAL DETECTED ]</div>
-                <div class="announcement-title">
-                    <a href="https://solo100.org" target="_blank" rel="noopener">SOLO100.ORG</a>: THE MOST EXCITING BITCOIN POOL TO JOIN.
-                </div>
-                <div class="announcement-text" id="announcement-text"></div>
-            </div>
-            <a class="announcement-cta" href="https://solo100.org" target="_blank" rel="noopener">[ JOIN POOL ]</a>
-        </div>
     </div>
 
     <hr class="hud-divider">
@@ -1103,18 +998,5 @@ document.getElementById('inputHashrate').addEventListener('keydown', function (e
     });
 }());
 </script>
-<script>
-(function(){
-    var texts = [
-        "A POOL SPECIFICALLY ENGINEERED FOR YOUR BITAXE AND ANY SMALL HASHRATE MINER.",
-        "A POOL WHERE YOUR FEW T DIFFICULTY SHARES ACTUALLY MATTER.",
-        "A POOL, A GAME, BOTH: CLAIM YOUR POSITION IN THE BEST 100 AND WIN A REWARD IN BITCOIN.",
-        "WHAT HAPPENS IF 100 FRIENDS HASH FOR EACH OTHER AND SPLIT THE REWARD WHEN THEY FIND A BLOCK? SOLO100.ORG.",
-        "FINALLY A POOL FOR SMALL HASHRATE DEVICES — NO DUST FROM PROPORTIONAL POOLS, NO IMPOSSIBLE ODDS OF SOLO MINING."
-    ];
-    document.getElementById('announcement-text').textContent = texts[Math.floor(Math.random() * texts.length)];
-}());
-</script>
-
 </body>
 </html>

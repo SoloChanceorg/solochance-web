@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sponsor SoloChance.org — put your brand in front of solo miners using the only chance calculator that supports Bitcoin Cash, Bitcoin SV, eCash and 15+ other cryptocurrencies.">
+    <meta name="author" content="SoloChance.org">
+    <meta name="google" content="notranslate">
+
+    <link rel="canonical" href="https://solochance.org/sponsor.html">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://solochance.org/sponsor.html">
+    <meta property="og:title"       content="Sponsor SoloChance.org">
+    <meta property="og:description" content="Sponsor SoloChance.org — put your brand in front of solo miners using the only chance calculator that supports Bitcoin Cash, Bitcoin SV, eCash and 15+ other cryptocurrencies.">
+    <meta property="og:image"       content="https://solochance.org/images/logo-domain.png">
+    <meta property="og:site_name"   content="SoloChance.org">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@solochanceorg">
+    <meta name="twitter:title"       content="Sponsor SoloChance.org">
+    <meta name="twitter:description" content="Put your brand in front of solo miners using SoloChance.org.">
+    <meta name="twitter:image"       content="https://solochance.org/images/logo-domain.png">
+
+    <link rel="icon" type="image/png" href="images/logo-no-text-transparent.png">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+          crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Sponsor — SoloChance.org</title>
+
+    <style>
+        /* ── Design tokens ───────────────────────────────────────────── */
+        :root {
+            --accent:       #4f46e5;
+            --accent-dark:  #4338ca;
+            --surface:      #ffffff;
+            --bg:           #f1f5f9;
+            --border:       #e2e8f0;
+            --text:         #0f172a;
+            --text-muted:   #64748b;
+            --text-faint:   #94a3b8;
+            --green:        #16a34a;
+            --green-dark:   #15803d;
+            --radius:       10px;
+            --shadow:       0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { font-size: 17px; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); }
+        a:hover { color: var(--accent-dark); }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 16px 80px;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            text-align: center;
+            padding: 44px 0 24px;
+        }
+
+        .site-header img {
+            max-height: 148px;
+            width: auto;
+            mix-blend-mode: multiply;
+        }
+
+        .header-pills {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .social-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: border-color .2s, color .2s;
+        }
+
+        .social-pill:hover { border-color: var(--accent); color: var(--accent); }
+        .social-pill.active { border-color: var(--accent); color: var(--accent); background: rgba(79,70,229,.05); }
+
+        /* ── Theme portal ── */
+        .theme-portal {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 200;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 48px;
+            background: #000;
+            border: 1px solid rgba(0,245,255,.35);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            color: #00f5ff;
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 0 0 18px rgba(0,245,255,.15), inset 0 0 18px rgba(0,245,255,.04);
+            transition: border-color .3s, box-shadow .3s;
+        }
+
+        .theme-portal:hover {
+            border-color: #00f5ff;
+            color: #00f5ff;
+            box-shadow: 0 0 32px rgba(0,245,255,.35), inset 0 0 24px rgba(0,245,255,.08);
+        }
+
+        .portal-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        .portal-label {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-shadow: 0 0 10px rgba(0,245,255,.7);
+        }
+
+        .portal-text { white-space: nowrap; }
+
+        /* ── Tagline ── */
+        .tagline {
+            text-align: center;
+            padding: 20px 16px 26px;
+            border-top: 1px solid var(--border);
+            margin-top: 10px;
+        }
+
+        .tagline h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .tagline .panel-desc {
+            max-width: 620px;
+            margin: 14px auto 0;
+            text-align: center;
+        }
+
+        /* ── Panel ── */
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px 28px;
+            margin-bottom: 20px;
+        }
+
+        .panel-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin: 0 0 6px;
+        }
+
+        .panel-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .panel-desc:last-child { margin-bottom: 0; }
+
+        /* ── Tier cards ── */
+        .tier-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tier-card.tier-sponsor {
+            border-color: rgba(79,70,229,.35);
+            background: linear-gradient(180deg, rgba(79,70,229,.05), rgba(79,70,229,0) 60%);
+        }
+
+        .tier-ribbon {
+            position: absolute;
+            top: 14px;
+            right: -34px;
+            width: 130px;
+            transform: rotate(45deg);
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 4px 0;
+        }
+
+        .tier-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .tier-price .tier-period {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-faint);
+        }
+
+        .tier-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 4px 0 10px;
+        }
+
+        .tier-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 10px 0 14px;
+        }
+
+        .tier-card > .tier-status { display: flex; }
+
+        .tier-status.available { color: var(--green-dark); }
+        .tier-status.filled { color: var(--text-faint); }
+
+        .btn-tier {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: var(--green);
+            color: #fff;
+            border-radius: 7px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .18s, box-shadow .18s;
+        }
+
+        .btn-tier:hover {
+            background: var(--green-dark);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(22,163,74,.3);
+        }
+
+        .btn-tier.btn-tier-outline {
+            background: transparent;
+            border: 1px solid var(--green);
+            color: var(--green-dark);
+        }
+
+        .btn-tier.btn-tier-outline:hover {
+            background: rgba(22,163,74,.06);
+            box-shadow: none;
+        }
+
+        /* ── Supporter list ── */
+        .supporter-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 16px 0 20px;
+        }
+
+        .supporter-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px dashed var(--border);
+            border-radius: 7px;
+            font-size: 0.85rem;
+        }
+
+        .supporter-index {
+            color: var(--text-faint);
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+        }
+
+        /* ── Donate ── */
+        select {
+            display: block;
+            width: 100%;
+            max-width: 220px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.875rem;
+            padding: 8px 28px 8px 10px;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            transition: border-color .18s, box-shadow .18s, background .18s;
+        }
+
+        select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(79,70,229,.1);
+            background-color: var(--surface);
+        }
+
+        .donate-address-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 10px 14px;
+            margin-top: 10px;
+        }
+
+        .donate-address-row code {
+            flex: 1;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text);
+            word-break: break-all;
+        }
+
+        .btn-copy {
+            flex-shrink: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-family: inherit;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: border-color .2s, color .2s;
+        }
+
+        .btn-copy:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-copy.copied { border-color: var(--green); color: var(--green); }
+
+        /* ── How it works table ── */
+        .how-table-wrap { overflow-x: auto; }
+
+        .how-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 560px;
+            margin-bottom: 18px;
+        }
+
+        .how-table thead th {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            padding: 0 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .how-table tbody tr { border-bottom: 1px solid var(--border); }
+        .how-table tbody tr:last-child { border-bottom: none; }
+
+        .how-table tbody td {
+            padding: 12px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            vertical-align: top;
+        }
+
+        .how-table tbody td strong { color: var(--text); }
+
+        /* ── Footer ── */
+        .disclaimer {
+            font-size: 0.76rem;
+            color: var(--text-faint);
+            text-align: center;
+            padding: 0 8px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .panel { padding: 18px 16px; }
+
+            .theme-portal {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                top: 12px;
+                right: 12px;
+            }
+
+            .portal-text { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<a class="theme-portal" href="scifi/sponsor.html">
+    <canvas class="portal-canvas" id="portal-canvas"></canvas>
+    <span class="portal-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span class="portal-text">Sci-Fi Theme</span>
+    </span>
+</a>
+
+<div class="page">
+
+    <header class="site-header">
+        <a href="/"><img src="images/logo-domain.png" alt="SoloChance.org — Solo Mining Chance Calculator"></a>
+        <div class="header-pills">
+            <a class="social-pill" href="/" >
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                Calculator
+            </a>
+            <a class="social-pill" href="/pools.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M3 6h18M3 12h18M3 18h18"/>
+                </svg>
+                Curated Pools
+            </a>
+            <a class="social-pill" href="/groups.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                Groups
+            </a>
+            <a class="social-pill active" href="/sponsor.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.2 21 12 17.27 5.8 21 7 14.14l-5-4.87 7.1-1.01L12 2z"/>
+                </svg>
+                Sponsor
+            </a>
+        </div>
+    </header>
+
+    <div class="tagline">
+        <h1>Sponsor SoloChance.org</h1>
+        <p class="panel-desc">Put your brand in front of solo miners using SoloChance.org — the only solo mining chance calculator that supports Bitcoin Cash, Bitcoin SV, eCash and 15+ other cryptocurrencies, alongside Bitcoin.</p>
+        <p class="panel-desc">SoloChance.org is free to use and always will be. Sponsoring it means backing the tool that makes solo mining odds calculable for miners who'd otherwise have no way to know them — especially for altcoins, where no other calculator exists.</p>
+    </div>
+
+    <!-- ── Sponsor tier ─────────────────────────────────────────────────── -->
+    <div class="panel tier-card tier-sponsor">
+        <div class="tier-ribbon">1 slot</div>
+        <div class="tier-price">0.01 BTC <span class="tier-period">/ year</span></div>
+        <h2 class="tier-name">Sponsor</h2>
+        <p class="panel-desc">The single highest-visibility spot: a banner on the homepage plus the top placement on this page — your logo, your text, your link. Only one Sponsor slot exists at a time, so it's exclusively your brand, never shared.</p>
+        <p class="tier-status available">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Currently available
+        </p>
+        <a class="btn-tier" href="mailto:hello@solochance.org?subject=SoloChance.org%20Sponsor%20Slot">Become the Sponsor →</a>
+    </div>
+
+    <!-- ── Supporters tier ──────────────────────────────────────────────── -->
+    <div class="panel tier-card">
+        <div class="tier-price">0.001 BTC <span class="tier-period">/ year</span></div>
+        <h2 class="tier-name">Supporters</h2>
+        <ol class="supporter-list">
+            <li class="supporter-row"><span class="supporter-index">1.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">2.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">3.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">4.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">5.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">6.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">7.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">8.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">9.</span> <span class="tier-status available">Available</span></li>
+            <li class="supporter-row"><span class="supporter-index">10.</span> <span class="tier-status available">Available</span></li>
+        </ol>
+        <a class="btn-tier btn-tier-outline" href="mailto:hello@solochance.org?subject=SoloChance.org%20Supporter%20Slot">Claim a supporter slot →</a>
+    </div>
+
+    <!-- ── Anonymous donation ───────────────────────────────────────────── -->
+    <div class="panel">
+        <h2 class="panel-label">Want to support anonymously?</h2>
+        <p class="panel-desc">We are always open to donations — pick a currency and donate directly to the address below:</p>
+        <select id="sponsorDonateCurrency" onchange="updateSponsorDonateAddress()"></select>
+        <div class="donate-address-row">
+            <code id="sponsorDonateAddress"></code>
+            <button class="btn-copy" id="sponsorDonateCopyBtn" onclick="copySponsorDonateAddress()">Copy</button>
+        </div>
+    </div>
+
+    <!-- ── How it works ─────────────────────────────────────────────────── -->
+    <div class="panel">
+        <h2 class="panel-label">How It Works</h2>
+        <div class="how-table-wrap">
+            <table class="how-table">
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Slots</th>
+                        <th>Price</th>
+                        <th>What You Get</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sponsor</strong></td>
+                        <td>1</td>
+                        <td>0.01 BTC / year</td>
+                        <td>Homepage sponsor banner, plus the highest-visibility spot on this page, plus listed in Supporter Pools in Pools page</td>
+                        <td>Currently available</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Supporter</strong></td>
+                        <td>10</td>
+                        <td>0.001 BTC / year</td>
+                        <td>Listed in the supporter list on this page, plus listed in Supporter Pools in Pools page</td>
+                        <td>Currently available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="panel-desc">Reach out via email with the text you'd like shown and the link it should point to. You can sponsor or support under your own name, your product's or company's name, or any of your social media accounts. Payment is in BTC, sent to an address we'll provide. Once payment confirms, your slot goes live and stays up for the paid period. Your sponsorship or support is shown on both the Classic and Sci-Fi themes.</p>
+        <p class="panel-desc">Not sure what this looks like in practice? Our sister products, <a href="https://solo100.org/sponsor.html" target="_blank" rel="noopener">solo100.org</a> and <a href="https://bch.ee/sponsor.html" target="_blank" rel="noopener">bch.ee</a>, already have a live Sponsor and Supporters — visit them yourself to see exactly how your brand would be shown.</p>
+        <p class="panel-desc">Contact us via email: <a href="mailto:hello@solochance.org">hello@solochance.org</a>.</p>
+        <p class="panel-desc"><a href="/terms.html">Terms apply</a>.</p>
+    </div>
+
+    <hr class="divider">
+
+    <footer id="site-footer">
+        <p class="disclaimer">Built in 🇪🇪 Estonia · Hosted in 🇩🇪 Germany</p>
+        <p class="disclaimer" style="margin-top:6px;">
+            © SoloChance.org ·
+            <a href="/terms.html">Terms of Service</a> ·
+            <a href="/privacy.html">Privacy Policy</a>
+        </p>
+    </footer>
+
+</div>
+
+<script>
+(function () {
+    const canvas = document.getElementById('portal-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+
+    function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+    }
+
+    function initStars() {
+        stars = [];
+        for (let i = 0; i < 90; i++) {
+            stars.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 1.1 + 0.2,
+                speed: Math.random() * 0.45 + 0.08,
+                opacity: Math.random()
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        stars.forEach(s => {
+            s.y += s.speed;
+            if (s.y > H) { s.y = 0; s.x = Math.random() * W; }
+            s.opacity += (Math.random() - 0.5) * 0.025;
+            s.opacity = Math.max(0.1, Math.min(1, s.opacity));
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0, 245, 255, ${s.opacity * 0.65})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    initStars();
+    draw();
+    window.addEventListener('resize', () => { resize(); initStars(); });
+}());
+</script>
+
+<script>
+(function () {
+    const DONATE_ADDRESSES = {
+        'BTC': 'bc1qzhf8vl89ev6jcly6zexdehef4zgnh3w8ahf97a',
+        'BCH': 'bitcoincash:qzky6wvyh72p6t0smr5qyc0wff3s7m7rjs9ufhdgpm',
+        'BSV': '15jEvM15BVRYbeNsv9Dkr1BgySA2AcNAsQ',
+        'XEC': 'ecash:qz4rdfhr97dev2p7wzkf9ucc8fzxduf795uen9r9m9',
+        'DGB': 'DNFom53EYTntDPRfv19dbvFTKxR4RSsFi9',
+        'LTC': 'ltc1qmjhg6n96la3mszdwrnppz3jg8drtr7627rxusu',
+        'DOGE': 'DH3n1YKXmVxdeMgrpbZb1FEQ8dj7tJmAUd',
+        'XMR': '85PDyHAcS9vdCjYjKksmo9Fo5XiscEgL32xLEsKtnEo7Aw9zon1Vm8oRYQf9TGw4kuaTgR4iocUgrLB9wprxNdAFEE9e5Ht',
+        'RVN': 'RFKhncKtrHFDMBXStyUybumvoGur65QdFV',
+        'ETC': '0x313105B4eea850a00f79d1DFc1DfA1dEc6C67171',
+        'ZEC': 't1fhoTM1KRtkKSpc457BVQwJzpxq6SAWRF6',
+        'QRL': 'Q01050066313f4c7dc0db1648fe34f3057077fb0d58e54e555ab094d0fc7cebe28709a2d8cf8a03'
+    };
+
+    const select = document.getElementById('sponsorDonateCurrency');
+    Object.keys(DONATE_ADDRESSES).forEach(function (currency) {
+        const opt = document.createElement('option');
+        opt.value = currency;
+        opt.textContent = currency;
+        select.appendChild(opt);
+    });
+
+    window.updateSponsorDonateAddress = function () {
+        const currency = select.value;
+        document.getElementById('sponsorDonateAddress').textContent = DONATE_ADDRESSES[currency];
+    };
+
+    window.copySponsorDonateAddress = function () {
+        const address = DONATE_ADDRESSES[select.value];
+        const btn = document.getElementById('sponsorDonateCopyBtn');
+        navigator.clipboard.writeText(address).then(function () {
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(function () {
+                btn.textContent = 'Copy';
+                btn.classList.remove('copied');
+            }, 2000);
+        }).catch(function () {
+            btn.textContent = 'Failed';
+            setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+        });
+    };
+
+    updateSponsorDonateAddress();
+}());
+</script>
+
+</body>
+</html>

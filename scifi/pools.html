@@ -324,33 +324,33 @@
             text-shadow: 0 0 8px var(--neon-cyan);
         }
 
+        /* ── Supporter Pools empty state ── */
+        .supporter-empty {
+            text-align: center;
+            padding: 32px 16px;
+        }
+
+        .supporter-empty .glyph {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 8px var(--neon-cyan);
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .supporter-empty p {
+            font-size: 0.78rem;
+            color: #667;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
         /* Placeholder rows */
         .placeholder-row td {
             color: #334;
             font-size: 0.75rem;
-        }
-
-        /* ── How to choose ── */
-        .choose-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .choose-list li {
-            font-size: 0.78rem;
-            color: #889;
-            letter-spacing: 0.3px;
-            line-height: 1.7;
-        }
-
-        .choose-list li strong {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.68rem;
-            letter-spacing: 1.5px;
-            color: var(--neon-cyan);
-            text-shadow: 0 0 6px var(--neon-cyan);
         }
 
         /* ── Theme switcher ── */
@@ -431,11 +431,6 @@
         <h1>SOLO<span style="color:var(--neon-green);">CHANCE</span><span style="color:var(--neon-cyan);font-size:0.5em;letter-spacing:4px;">.ORG</span></h1>
         <div class="sub">// SCI-FI EDITION //</div>
         <h2 class="tagline">Curated mining pools, hand-picked by SoloChance.org.</h2>
-        <p class="panel-desc" style="max-width: 640px; margin: 12px auto 0; text-align: center;">
-            SOLO POOLS AREN'T ONE-SIZE-FITS-ALL — THEY DIFFER IN PAYOUT SCHEME (WINNER-TAKES-ALL, PROPORTIONAL-SINCE-LAST-BLOCK,
-            OR TOP-N SHARE SPLITTING), FEES, LATENCY, AND MINIMUM WITHDRAWAL. THE POOLS BELOW ARE ONES WE'VE USED OR
-            VETTED DIRECTLY, GROUPED BY THE KIND OF EXPERIENCE THEY OFFER.
-        </p>
     </div>
 
     <div class="nav-bar">
@@ -443,7 +438,9 @@
         <span class="nav-sep">//</span>
         <a class="nav-link active" href="pools.html">[ CURATED POOLS ]</a>
         <span class="nav-sep">//</span>
-        <a class="nav-link" href="https://twitter.com/solochanceorg" target="_blank">[ @SOLOCHANCEORG ]</a>
+        <a class="nav-link" href="groups.html">[ GROUPS ]</a>
+        <span class="nav-sep">//</span>
+        <a class="nav-link" href="sponsor.html">[ SPONSOR ]</a>
     </div>
 
     <hr class="hud-divider">
@@ -479,7 +476,7 @@
                                 <a class="pool-name-link" href="https://bch.ee" target="_blank" rel="noopener">BCH.EE</a>
                             </div>
                         </td>
-                        <td class="pool-desc-cell">A Bitcoin Cash port of Bitcoin Parasite Pool — the block finder gets 1 BCH, and the rest is shared proportionally by contribution.</td>
+                        <td class="pool-desc-cell">A Bitcoin Cash port of Bitcoin Parasite Pool — the block finder gets 1 BCH, and the rest is shared proportionally by contribution. The first block was found on August 9, 2026 at 23:18:42, as block #963375. Blocks are very frequent — visit the <a href="https://bch.ee/#blocks" target="_blank" rel="noopener">Found Blocks page</a>.</td>
                         <td class="action-cell"><a class="btn-visit" href="https://bch.ee" target="_blank" rel="noopener">[ JOIN ]</a></td>
                     </tr>
                 </tbody>
@@ -487,10 +484,21 @@
         </div>
     </div>
 
+    <!-- ── Supporter Pools ───────────────────────────────────────────────── -->
+    <div class="panel">
+        <h3 class="panel-label">// SUPPORTER POOLS //</h3>
+        <p class="panel-desc">POOLS CURRENTLY SUPPORTING SOLOCHANCE.ORG.</p>
+        <div class="supporter-empty">
+            <span class="glyph">// NO SUPPORTERS YET //</span>
+            <p>BE THE FIRST TO SUPPORT.</p>
+            <a class="btn-visit" href="sponsor.html">[ BECOME A SUPPORTER ]</a>
+        </div>
+    </div>
+
     <!-- ── Category 2: The Classic Experience ─────────────────────────────── -->
     <div class="panel">
         <h3 class="panel-label">// THE CLASSIC EXPERIENCE //</h3>
-        <p class="panel-desc">Established, trusted pools with a proven track record — from strict solo (finder keeps the block) to proportional-since-last-block payouts, without the newer leaderboard-style schemes above. For miners who want reliable, time-tested options.</p>
+        <p class="panel-desc">Established, trusted pools with a proven track record of found blocks — from strict solo to the newer Parasite scheme. For miners who want reliable, time-tested options with almost no risk.</p>
         <div class="pool-table-wrap">
             <table class="pool-table">
                 <thead>
@@ -544,17 +552,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-
-    <!-- ── How to choose ─────────────────────────────────────────────────── -->
-    <div class="panel">
-        <h3 class="panel-label">// HOW TO CHOOSE A SOLO POOL //</h3>
-        <ul class="choose-list">
-            <li><strong>FEE</strong> — ranges from 0% (self-hosted options like publicpool.io) to ~1.5% (atlaspool.io's global Anycast infrastructure). Lower isn't automatically better if it costs you uptime or latency.</li>
-            <li><strong>PAYOUT SCHEME</strong> — strict solo (finder takes all, e.g. ckpool.org), proportional-since-last-block (parasite.space, bch.ee), or share-leaderboard hybrids (solo100.org). Pick based on whether you want pure lottery odds or smoothed-out volatility.</li>
-            <li><strong>LATENCY</strong> — matters more than people expect for small miners; a pool with regional/Anycast routing (atlaspool.io) reduces rejected shares versus a single distant server.</li>
-            <li><strong>SELF-HOSTING</strong> — if you want full sovereignty over your node and payouts, publicpool.io is open-source and self-hostable rather than only available as a hosted service.</li>
-        </ul>
     </div>
 
     <hr class="hud-divider">

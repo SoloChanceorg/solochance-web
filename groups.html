@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SoloChance.org Telegram groups and X accounts — join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta name="author" content="SoloChance.org">
+    <meta name="google" content="notranslate">
+
+    <link rel="canonical" href="https://solochance.org/groups.html">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://solochance.org/groups.html">
+    <meta property="og:title"       content="Groups — SoloChance.org">
+    <meta property="og:description" content="SoloChance.org Telegram groups and X accounts — join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta property="og:image"       content="https://solochance.org/images/logo-domain.png">
+    <meta property="og:site_name"   content="SoloChance.org">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@solochanceorg">
+    <meta name="twitter:title"       content="Groups — SoloChance.org">
+    <meta name="twitter:description" content="Join the SoloChance.org Telegram groups and X accounts.">
+    <meta name="twitter:image"       content="https://solochance.org/images/logo-domain.png">
+
+    <link rel="icon" type="image/png" href="images/logo-no-text-transparent.png">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+          crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Groups — SoloChance.org</title>
+
+    <style>
+        /* ── Design tokens ───────────────────────────────────────────── */
+        :root {
+            --accent:       #4f46e5;
+            --accent-dark:  #4338ca;
+            --surface:      #ffffff;
+            --bg:           #f1f5f9;
+            --border:       #e2e8f0;
+            --text:         #0f172a;
+            --text-muted:   #64748b;
+            --text-faint:   #94a3b8;
+            --green:        #16a34a;
+            --green-dark:   #15803d;
+            --radius:       10px;
+            --shadow:       0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { font-size: 17px; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); }
+        a:hover { color: var(--accent-dark); }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 16px 80px;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            text-align: center;
+            padding: 44px 0 24px;
+        }
+
+        .site-header img {
+            max-height: 148px;
+            width: auto;
+            mix-blend-mode: multiply;
+        }
+
+        .header-pills {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .social-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: border-color .2s, color .2s;
+        }
+
+        .social-pill:hover { border-color: var(--accent); color: var(--accent); }
+        .social-pill.active { border-color: var(--accent); color: var(--accent); background: rgba(79,70,229,.05); }
+
+        /* ── Theme portal ── */
+        .theme-portal {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 200;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 48px;
+            background: #000;
+            border: 1px solid rgba(0,245,255,.35);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            color: #00f5ff;
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 0 0 18px rgba(0,245,255,.15), inset 0 0 18px rgba(0,245,255,.04);
+            transition: border-color .3s, box-shadow .3s;
+        }
+
+        .theme-portal:hover {
+            border-color: #00f5ff;
+            color: #00f5ff;
+            box-shadow: 0 0 32px rgba(0,245,255,.35), inset 0 0 24px rgba(0,245,255,.08);
+        }
+
+        .portal-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        .portal-label {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-shadow: 0 0 10px rgba(0,245,255,.7);
+        }
+
+        .portal-text { white-space: nowrap; }
+
+        /* ── Tagline ── */
+        .tagline {
+            text-align: center;
+            padding: 20px 16px 26px;
+            border-top: 1px solid var(--border);
+            margin-top: 10px;
+        }
+
+        .tagline h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .tagline .panel-desc {
+            max-width: 600px;
+            margin: 14px auto 0;
+            text-align: center;
+        }
+
+        /* ── Panel ── */
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px 28px;
+            margin-bottom: 20px;
+        }
+
+        .panel-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin: 0 0 6px;
+        }
+
+        .panel-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ── Group card ── */
+        .group-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .group-card-icon.btc { background: #F7931A; }
+        .group-card-icon.bch { background: #0AC18E; }
+
+        .group-card-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .group-card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .group-card-sub {
+            font-size: 0.78rem;
+            color: var(--text-faint);
+        }
+
+        .group-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .group-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 7px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity .18s, box-shadow .18s;
+        }
+
+        .group-link:hover { opacity: 0.9; }
+
+        .group-link.telegram { background: #229ED9; color: #fff; }
+        .group-link.telegram:hover { color: #fff; box-shadow: 0 4px 12px rgba(34,158,217,.35); }
+
+        .group-link.x { background: #000; color: #fff; }
+        .group-link.x:hover { color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+
+        /* ── Footer ── */
+        .disclaimer {
+            font-size: 0.76rem;
+            color: var(--text-faint);
+            text-align: center;
+            padding: 0 8px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .panel { padding: 18px 16px; }
+
+            .theme-portal {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                top: 12px;
+                right: 12px;
+            }
+
+            .portal-text { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<a class="theme-portal" href="scifi/groups.html">
+    <canvas class="portal-canvas" id="portal-canvas"></canvas>
+    <span class="portal-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span class="portal-text">Sci-Fi Theme</span>
+    </span>
+</a>
+
+<div class="page">
+
+    <header class="site-header">
+        <a href="/"><img src="images/logo-domain.png" alt="SoloChance.org — Solo Mining Chance Calculator"></a>
+        <div class="header-pills">
+            <a class="social-pill" href="/" >
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                Calculator
+            </a>
+            <a class="social-pill" href="/pools.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M3 6h18M3 12h18M3 18h18"/>
+                </svg>
+                Curated Pools
+            </a>
+            <a class="social-pill active" href="/groups.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                Groups
+            </a>
+            <a class="social-pill" href="/sponsor.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.2 21 12 17.27 5.8 21 7 14.14l-5-4.87 7.1-1.01L12 2z"/>
+                </svg>
+                Sponsor
+            </a>
+        </div>
+    </header>
+
+    <div class="tagline">
+        <h1>Groups</h1>
+        <p class="panel-desc">Join the Telegram groups and follow on X to keep up with SoloChance.org, solo100.org, and bch.ee Parasite Pool.</p>
+    </div>
+
+    <!-- ── Bitcoin ──────────────────────────────────────────────────────── -->
+    <div class="panel">
+        <div class="group-card-head">
+            <div class="group-card-icon btc"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <div>
+                <div class="group-card-title">Bitcoin</div>
+                <div class="group-card-sub">SoloChance.org &amp; solo100.org discussions</div>
+            </div>
+        </div>
+        <p class="panel-desc">Talk calculator feedback, currency requests, and solo100.org strategy with other Bitcoin solo miners.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/solochanceorg" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
+            </a>
+            <a class="group-link x" href="https://x.com/solochanceorg" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> @solochanceorg
+            </a>
+        </div>
+    </div>
+
+    <!-- ── Bitcoin Cash ─────────────────────────────────────────────────── -->
+    <div class="panel">
+        <div class="group-card-head">
+            <div class="group-card-icon bch"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <div>
+                <div class="group-card-title">Bitcoin Cash</div>
+                <div class="group-card-sub">bch.ee Parasite Pool discussions</div>
+            </div>
+        </div>
+        <p class="panel-desc">Talk pool stats, payouts, and Parasite-scheme strategy with other Bitcoin Cash solo miners.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/parabchee" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
+            </a>
+            <a class="group-link x" href="https://x.com/parabch" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> @parabch
+            </a>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <footer id="site-footer">
+        <p class="disclaimer">Built in 🇪🇪 Estonia · Hosted in 🇩🇪 Germany</p>
+        <p class="disclaimer" style="margin-top:6px;">
+            © SoloChance.org ·
+            <a href="/terms.html">Terms of Service</a> ·
+            <a href="/privacy.html">Privacy Policy</a>
+        </p>
+    </footer>
+
+</div>
+
+<script>
+(function () {
+    const canvas = document.getElementById('portal-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+
+    function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+    }
+
+    function initStars() {
+        stars = [];
+        for (let i = 0; i < 90; i++) {
+            stars.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 1.1 + 0.2,
+                speed: Math.random() * 0.45 + 0.08,
+                opacity: Math.random()
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        stars.forEach(s => {
+            s.y += s.speed;
+            if (s.y > H) { s.y = 0; s.x = Math.random() * W; }
+            s.opacity += (Math.random() - 0.5) * 0.025;
+            s.opacity = Math.max(0.1, Math.min(1, s.opacity));
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0, 245, 255, ${s.opacity * 0.65})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    initStars();
+    draw();
+    window.addEventListener('resize', () => { resize(); initStars(); });
+}());
+</script>
+
+</body>
+</html>

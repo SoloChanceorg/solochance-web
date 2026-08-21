@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SoloChance.org Telegram groups and X accounts — Sci-Fi Edition. Join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta name="author" content="SoloChance.org">
+    <meta name="google" content="notranslate">
+
+    <link rel="canonical" href="https://solochance.org/scifi/groups.html">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://solochance.org/scifi/groups.html">
+    <meta property="og:title"       content="Groups // SoloChance.org Sci-Fi Edition">
+    <meta property="og:description" content="SoloChance.org Telegram groups and X accounts — join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta property="og:image"       content="https://solochance.org/images/logo-domain.png">
+    <meta property="og:site_name"   content="SoloChance.org">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@solochanceorg">
+    <meta name="twitter:title"       content="Groups // SoloChance.org Sci-Fi Edition">
+    <meta name="twitter:description" content="Join the SoloChance.org Telegram groups and X accounts.">
+    <meta name="twitter:image"       content="https://solochance.org/images/logo-domain.png">
+
+    <link rel="icon" type="image/png" href="../images/logo-no-text-transparent.png">
+    <title>Groups // SoloChance.org Sci-Fi Edition</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+          crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-green: #00ff41;
+            --neon-cyan: #00f5ff;
+            --neon-red: #ff003c;
+            --panel-bg: rgba(0, 10, 2, 0.85);
+            --border-color: #00ff4155;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #000;
+            color: var(--neon-green);
+            font-family: 'Share Tech Mono', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Starfield ── */
+        #starfield {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ── Scanlines ── */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,0,0,0.08) 2px,
+                rgba(0,0,0,0.08) 4px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ── Layout ── */
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        /* ── Header ── */
+        .logo-area {
+            text-align: center;
+            padding: 30px 0 20px;
+        }
+
+        .logo-area h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--neon-cyan);
+            text-shadow:
+                0 0 10px var(--neon-cyan),
+                0 0 30px var(--neon-cyan),
+                0 0 60px var(--neon-cyan);
+            letter-spacing: 6px;
+            animation: flicker 4s infinite;
+        }
+
+        .logo-area .sub {
+            color: var(--neon-green);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        .logo-area .tagline {
+            color: #aaa;
+            font-size: 0.8rem;
+            margin-top: 14px;
+            letter-spacing: 1px;
+        }
+
+        @keyframes flicker {
+            0%, 95%, 97%, 100% { opacity: 1; }
+            96% { opacity: 0.4; }
+        }
+
+        /* ── Nav bar ── */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 10px 0 14px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #556;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            transition: color .2s, text-shadow .2s;
+        }
+
+        .nav-link:hover { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
+
+        .nav-link.active {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        .nav-sep { color: #333; font-size: 0.65rem; }
+
+        /* ── Divider ── */
+        .hud-divider {
+            border: none;
+            border-top: 1px solid var(--neon-green);
+            box-shadow: 0 0 8px var(--neon-green);
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+
+        /* ── Panel ── */
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 24px;
+            margin-bottom: 24px;
+            position: relative;
+            box-shadow:
+                0 0 20px rgba(0,255,65,0.05),
+                inset 0 0 20px rgba(0,255,65,0.03);
+        }
+
+        .panel-label {
+            position: absolute;
+            top: -10px;
+            left: 18px;
+            background: #000;
+            padding: 0 8px;
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 8px var(--neon-cyan);
+        }
+
+        .panel::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 12px; height: 12px;
+            border-top: 2px solid var(--neon-cyan);
+            border-right: 2px solid var(--neon-cyan);
+        }
+
+        .panel-desc {
+            font-size: 0.75rem;
+            color: #556;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        /* ── Group card ── */
+        .group-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #000;
+            flex-shrink: 0;
+        }
+
+        .group-card-icon.btc { background: #F7931A; }
+        .group-card-icon.bch { background: #0AC18E; }
+
+        .group-card-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .group-card-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--neon-green);
+        }
+
+        .group-card-sub {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: #556;
+            margin-top: 4px;
+        }
+
+        .group-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .group-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 2px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            border: 1px solid;
+            background: transparent;
+            transition: box-shadow .2s, text-shadow .2s;
+        }
+
+        .group-link.telegram { border-color: #229ED9; color: #229ED9; }
+        .group-link.telegram:hover { box-shadow: 0 0 16px #229ED9; text-shadow: 0 0 8px #229ED9; }
+
+        .group-link.x { border-color: var(--neon-cyan); color: var(--neon-cyan); }
+        .group-link.x:hover { box-shadow: 0 0 16px var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
+
+        /* ── Theme switcher ── */
+        .theme-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 200;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            width: 180px;
+            height: 48px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0;
+            color: #0f172a;
+            text-decoration: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.08);
+            transition: border-color .2s, box-shadow .2s, color .2s;
+        }
+
+        .theme-btn:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 20px rgba(0,0,0,.14);
+            color: #4f46e5;
+        }
+
+        .theme-text { white-space: nowrap; }
+
+        /* ── Footer ── */
+        .sci-footer {
+            text-align: center;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: #556;
+            margin-top: 40px;
+        }
+
+        .sci-footer a { color: #667; text-decoration: none; }
+        .sci-footer a:hover { color: var(--neon-green); }
+
+        /* ── Responsive ── */
+        @media (max-width: 700px) {
+            .logo-area h1 { font-size: 1.8rem; }
+
+            .theme-btn {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                top: 12px;
+                right: 12px;
+            }
+
+            .theme-text { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<a class="theme-btn" href="../groups.html">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+    </svg>
+    <span class="theme-text">Classic Theme</span>
+</a>
+
+<div class="page">
+
+    <div class="logo-area">
+        <h1>SOLO<span style="color:var(--neon-green);">CHANCE</span><span style="color:var(--neon-cyan);font-size:0.5em;letter-spacing:4px;">.ORG</span></h1>
+        <div class="sub">// SCI-FI EDITION //</div>
+        <h2 class="tagline">Groups.</h2>
+        <p class="panel-desc" style="max-width: 600px; margin: 14px auto 0; text-align: center;">
+            JOIN THE TELEGRAM GROUPS AND FOLLOW ON X TO KEEP UP WITH SOLOCHANCE.ORG, SOLO100.ORG, AND BCH.EE PARASITE POOL.
+        </p>
+    </div>
+
+    <div class="nav-bar">
+        <a class="nav-link" href="../scifi/">[ CALCULATOR ]</a>
+        <span class="nav-sep">//</span>
+        <a class="nav-link" href="pools.html">[ CURATED POOLS ]</a>
+        <span class="nav-sep">//</span>
+        <a class="nav-link active" href="groups.html">[ GROUPS ]</a>
+        <span class="nav-sep">//</span>
+        <a class="nav-link" href="sponsor.html">[ SPONSOR ]</a>
+    </div>
+
+    <hr class="hud-divider">
+
+    <!-- ── Bitcoin ──────────────────────────────────────────────────────── -->
+    <div class="panel">
+        <h3 class="panel-label">// BITCOIN //</h3>
+        <div class="group-card-head">
+            <div class="group-card-icon btc"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <div>
+                <div class="group-card-title">BITCOIN</div>
+                <div class="group-card-sub">SOLOCHANCE.ORG &amp; SOLO100.ORG DISCUSSIONS</div>
+            </div>
+        </div>
+        <p class="panel-desc">TALK CALCULATOR FEEDBACK, CURRENCY REQUESTS, AND SOLO100.ORG STRATEGY WITH OTHER BITCOIN SOLO MINERS.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/solochanceorg" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> TELEGRAM
+            </a>
+            <a class="group-link x" href="https://x.com/solochanceorg" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> @SOLOCHANCEORG
+            </a>
+        </div>
+    </div>
+
+    <!-- ── Bitcoin Cash ─────────────────────────────────────────────────── -->
+    <div class="panel">
+        <h3 class="panel-label">// BITCOIN CASH //</h3>
+        <div class="group-card-head">
+            <div class="group-card-icon bch"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <div>
+                <div class="group-card-title">BITCOIN CASH</div>
+                <div class="group-card-sub">BCH.EE PARASITE POOL DISCUSSIONS</div>
+            </div>
+        </div>
+        <p class="panel-desc">TALK POOL STATS, PAYOUTS, AND PARASITE-SCHEME STRATEGY WITH OTHER BITCOIN CASH SOLO MINERS.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/parabchee" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> TELEGRAM
+            </a>
+            <a class="group-link x" href="https://x.com/parabch" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> @PARABCH
+            </a>
+        </div>
+    </div>
+
+    <hr class="hud-divider">
+
+    <div class="sci-footer">
+        <p>DISCLAIMER: NO REPRESENTATION OR WARRANTY OF ANY KIND IS MADE REGARDING ACCURACY OR COMPLETENESS.</p>
+        <p style="margin-top:8px;">ENGINEERED AT 🇪🇪 ESTONIAN HQ &middot; DEPLOYED ON 🇩🇪 GERMAN SERVERS</p>
+        <p style="margin-top:8px;">&copy; SOLOCHANCE.ORG &mdash; <a href="/terms.html">TERMS</a> &mdash; <a href="/privacy.html">PRIVACY</a></p>
+    </div>
+
+</div>
+
+<script>
+(function () {
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+
+    function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+    }
+
+    function initStars(n) {
+        stars = [];
+        for (let i = 0; i < n; i++) {
+            stars.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 1.2 + 0.2,
+                speed: Math.random() * 0.3 + 0.05,
+                opacity: Math.random()
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        stars.forEach(s => {
+            s.y += s.speed;
+            if (s.y > H) { s.y = 0; s.x = Math.random() * W; }
+            s.opacity += (Math.random() - 0.5) * 0.02;
+            s.opacity = Math.max(0.1, Math.min(1, s.opacity));
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0, 255, 200, ${s.opacity * 0.6})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    initStars(250);
+    draw();
+    window.addEventListener('resize', () => { resize(); initStars(250); });
+})();
+</script>
+
+</body>
+</html>

@@ -26,7 +26,7 @@
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjHY/dChFMmjsHiGwkuQimqQ=="
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
           crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -305,28 +305,29 @@
             box-shadow: 0 4px 12px rgba(79,70,229,.35);
         }
 
+        /* ── Supporter Pools empty state ── */
+        .supporter-empty {
+            text-align: center;
+            padding: 28px 16px;
+        }
+
+        .supporter-empty i {
+            font-size: 1.5rem;
+            color: var(--text-faint);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .supporter-empty p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
         /* Placeholder rows */
         .placeholder-row td {
             color: var(--text-faint);
             font-size: 0.82rem;
-        }
-
-        /* ── How to choose ── */
-        .choose-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .choose-list li {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .choose-list li strong {
-            color: var(--text);
         }
 
         /* ── Footer ── */
@@ -379,9 +380,7 @@
         <a href="/"><img src="images/logo-domain.png" alt="SoloChance.org — Solo Mining Chance Calculator"></a>
         <div class="header-pills">
             <a class="social-pill" href="/" >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/>
-                </svg>
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
                 Calculator
             </a>
             <a class="social-pill active" href="/pools.html">
@@ -390,22 +389,23 @@
                 </svg>
                 Curated Pools
             </a>
-            <a class="social-pill" href="https://twitter.com/solochanceorg" target="_blank" rel="noopener">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            <a class="social-pill" href="/groups.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
                 </svg>
-                @solochanceorg
+                Groups
+            </a>
+            <a class="social-pill" href="/sponsor.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.2 21 12 17.27 5.8 21 7 14.14l-5-4.87 7.1-1.01L12 2z"/>
+                </svg>
+                Sponsor
             </a>
         </div>
     </header>
 
     <div class="tagline">
         <h1>Curated mining pools, hand-picked by SoloChance.org.</h1>
-        <p class="panel-desc" style="max-width: 640px; margin: 12px auto 0;">
-            Solo pools aren't one-size-fits-all — they differ in payout scheme (winner-takes-all, proportional-since-last-block,
-            or top-N share splitting), fees, latency, and minimum withdrawal. The pools below are ones we've used or
-            vetted directly, grouped by the kind of experience they offer.
-        </p>
     </div>
 
     <!-- ── Category 1: Awesome Experimental Pools ─────────────────────────── -->
@@ -439,7 +439,7 @@
                                 <a class="pool-name-link" href="https://bch.ee" target="_blank" rel="noopener">bch.ee</a>
                             </div>
                         </td>
-                        <td class="pool-desc-cell">A Bitcoin Cash port of Bitcoin Parasite Pool — the block finder gets 1 BCH, and the rest is shared proportionally by contribution.</td>
+                        <td class="pool-desc-cell">A Bitcoin Cash port of Bitcoin Parasite Pool — the block finder gets 1 BCH, and the rest is shared proportionally by contribution. The first block was found on August 9, 2026 at 23:18:42, as block #963375. Blocks are very frequent — visit the <a href="https://bch.ee/#blocks" target="_blank" rel="noopener">Found Blocks page</a>.</td>
                         <td class="action-cell"><a class="btn-visit" href="https://bch.ee" target="_blank" rel="noopener">Visit →</a></td>
                     </tr>
                 </tbody>
@@ -447,10 +447,21 @@
         </div>
     </div>
 
+    <!-- ── Supporter Pools ───────────────────────────────────────────────── -->
+    <div class="panel">
+        <h2 class="panel-label">Supporter Pools</h2>
+        <p class="panel-desc">Pools currently supporting SoloChance.org.</p>
+        <div class="supporter-empty">
+            <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+            <p>No supporter pools yet — be the first.</p>
+            <a class="btn-visit" href="/sponsor.html">Become a Supporter →</a>
+        </div>
+    </div>
+
     <!-- ── Category 2: The Classic Experience ─────────────────────────────── -->
     <div class="panel">
         <h2 class="panel-label">The Classic Experience</h2>
-        <p class="panel-desc">Established, trusted pools with a proven track record — from strict solo (finder keeps the block) to proportional-since-last-block payouts, without the newer leaderboard-style schemes above. For miners who want reliable, time-tested options.</p>
+        <p class="panel-desc">Established, trusted pools with a proven track record of found blocks — from strict solo to the newer Parasite scheme. For miners who want reliable, time-tested options with almost no risk.</p>
         <div class="pool-table-wrap">
             <table class="pool-table">
                 <thead>
@@ -504,17 +515,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-
-    <!-- ── How to choose ────────────────────────────────────────────────── -->
-    <div class="panel">
-        <h2 class="panel-label">How to Choose a Solo Pool</h2>
-        <ul class="choose-list">
-            <li><strong>Fee</strong> — ranges from 0% (self-hosted options like publicpool.io) to ~1.5% (atlaspool.io's global Anycast infrastructure). Lower isn't automatically better if it costs you uptime or latency.</li>
-            <li><strong>Payout scheme</strong> — strict solo (finder takes all, e.g. ckpool.org), proportional-since-last-block (parasite.space, bch.ee), or share-leaderboard hybrids (solo100.org). Pick based on whether you want pure lottery odds or smoothed-out volatility.</li>
-            <li><strong>Latency</strong> — matters more than people expect for small miners; a pool with regional/Anycast routing (atlaspool.io) reduces rejected shares versus a single distant server.</li>
-            <li><strong>Self-hosting</strong> — if you want full sovereignty over your node and payouts, publicpool.io is open-source and self-hostable rather than only available as a hosted service.</li>
-        </ul>
     </div>
 
     <hr class="divider">

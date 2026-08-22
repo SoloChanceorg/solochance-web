@@ -422,18 +422,40 @@
         .how-table tbody td strong { color: var(--text); }
 
         /* ── Footer ── */
-        .disclaimer {
-            font-size: 0.76rem;
+        #site-footer {
+            margin-top: 28px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            font-size: 0.82rem;
             color: var(--text-faint);
-            text-align: center;
-            padding: 0 8px;
-            line-height: 1.6;
         }
 
-        .divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 28px 0;
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.75rem;
+            flex-wrap: wrap;
+        }
+
+        #site-footer a { color: var(--text-faint); text-decoration: none; }
+        #site-footer a:hover { color: var(--accent); }
+
+        .footer-tg-link, .footer-email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-products, .footer-bottom {
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        .footer-bottom-sub { margin-top: 5px; }
+
+        @media (max-width: 640px) {
+            .footer-inner { flex-direction: column; gap: 10px; }
         }
 
         /* ── Responsive ── */
@@ -581,15 +603,25 @@
         <p class="panel-desc"><a href="/terms.html">Terms apply</a>.</p>
     </div>
 
-    <hr class="divider">
-
     <footer id="site-footer">
-        <p class="disclaimer">Built in 🇪🇪 Estonia · Hosted in 🇩🇪 Germany</p>
-        <p class="disclaimer" style="margin-top:6px;">
-            © SoloChance.org ·
-            <a href="/terms.html">Terms of Service</a> ·
-            <a href="/privacy.html">Privacy Policy</a>
-        </p>
+        <div class="footer-inner">
+            <a class="footer-tg-link" href="https://t.me/solochanceorg" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                t.me/solochanceorg
+            </a>
+            <a class="footer-email-link" href="mailto:hello@solochance.org">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                hello@solochance.org
+            </a>
+            <span><a href="/sponsor.html">Sponsor</a> · <a href="/groups.html">Groups</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></span>
+        </div>
+        <div class="footer-products">
+            Our products: <a href="https://solo100.org" target="_blank" rel="noopener">solo100.org</a> · <a href="https://bch.ee" target="_blank" rel="noopener">bch.ee Parasite Pool</a>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 SoloChance.org</div>
+            <div class="footer-bottom-sub">Built in 🇪🇪 Estonia · Hosted in 🇩🇪 Germany</div>
+        </div>
     </footer>
 
 </div>

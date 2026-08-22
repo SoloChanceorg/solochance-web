@@ -312,10 +312,37 @@
             letter-spacing: 2px;
             color: #556;
             margin-top: 40px;
+            border-top: 1px solid rgba(0,255,65,0.15);
+            padding-top: 20px;
         }
 
         .sci-footer a { color: #667; text-decoration: none; }
         .sci-footer a:hover { color: var(--neon-green); }
+
+        .sci-footer .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.75rem;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .sci-footer .footer-tg-link, .sci-footer .footer-email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sci-footer .footer-products, .sci-footer .footer-bottom {
+            margin-top: 14px;
+        }
+
+        .sci-footer .footer-bottom-sub { margin-top: 6px; }
+
+        @media (max-width: 700px) {
+            .sci-footer .footer-inner { flex-direction: column; gap: 10px; }
+        }
 
         /* ── Responsive ── */
         @media (max-width: 700px) {
@@ -409,12 +436,26 @@
         </div>
     </div>
 
-    <hr class="hud-divider">
-
-    <div class="sci-footer">
+    <div class="sci-footer" id="site-footer">
         <p>DISCLAIMER: NO REPRESENTATION OR WARRANTY OF ANY KIND IS MADE REGARDING ACCURACY OR COMPLETENESS.</p>
-        <p style="margin-top:8px;">ENGINEERED AT 🇪🇪 ESTONIAN HQ &middot; DEPLOYED ON 🇩🇪 GERMAN SERVERS</p>
-        <p style="margin-top:8px;">&copy; SOLOCHANCE.ORG &mdash; <a href="/terms.html">TERMS</a> &mdash; <a href="/privacy.html">PRIVACY</a></p>
+        <div class="footer-inner">
+            <a class="footer-tg-link" href="https://t.me/solochanceorg" target="_blank" rel="noopener">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                T.ME/SOLOCHANCEORG
+            </a>
+            <a class="footer-email-link" href="mailto:hello@solochance.org">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                HELLO@SOLOCHANCE.ORG
+            </a>
+            <span><a href="sponsor.html">SPONSOR</a> &mdash; <a href="groups.html">GROUPS</a> &mdash; <a href="/terms.html">TERMS</a> &mdash; <a href="/privacy.html">PRIVACY</a></span>
+        </div>
+        <div class="footer-products">
+            OUR PRODUCTS: <a href="https://solo100.org" target="_blank" rel="noopener">SOLO100.ORG</a> &middot; <a href="https://bch.ee" target="_blank" rel="noopener">BCH.EE PARASITE POOL</a>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 SOLOCHANCE.ORG</div>
+            <div class="footer-bottom-sub">ENGINEERED AT 🇪🇪 ESTONIAN HQ &middot; DEPLOYED ON 🇩🇪 GERMAN SERVERS</div>
+        </div>
     </div>
 
 </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SoloChance.org Telegram groups and X accounts — Sci-Fi Edition. Join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta name="description" content="SoloChance.org Telegram community — Sci-Fi Edition. Join the umbrella @solochanceorg group, or the dedicated groups for solo100.org, bch.ee Parasite Pool, and bitcoincash.ee.">
     <meta name="author" content="SoloChance.org">
     <meta name="google" content="notranslate">
 
@@ -12,14 +12,14 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://solochance.org/scifi/groups.html">
     <meta property="og:title"       content="Groups // SoloChance.org Sci-Fi Edition">
-    <meta property="og:description" content="SoloChance.org Telegram groups and X accounts — join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta property="og:description" content="SoloChance.org Telegram community — join the umbrella @solochanceorg group, or the dedicated groups for solo100.org, bch.ee Parasite Pool, and bitcoincash.ee.">
     <meta property="og:image"       content="https://solochance.org/images/logo-domain.png">
     <meta property="og:site_name"   content="SoloChance.org">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:site"        content="@solochanceorg">
     <meta name="twitter:title"       content="Groups // SoloChance.org Sci-Fi Edition">
-    <meta name="twitter:description" content="Join the SoloChance.org Telegram groups and X accounts.">
+    <meta name="twitter:description" content="Join the SoloChance.org Telegram community.">
     <meta name="twitter:image"       content="https://solochance.org/images/logo-domain.png">
 
     <link rel="icon" type="image/png" href="../images/logo-no-text-transparent.png">
@@ -207,20 +207,35 @@
         }
 
         /* ── Group card ── */
-        .group-card-icon {
+        .group-card-logo {
             width: 44px;
             height: 44px;
+            object-fit: contain;
             border-radius: 3px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: #000;
+            background: rgba(0,255,65,0.04);
+            padding: 5px;
+            box-sizing: border-box;
             flex-shrink: 0;
         }
 
-        .group-card-icon.btc { background: #F7931A; }
-        .group-card-icon.bch { background: #0AC18E; }
+        .panel.featured {
+            border-color: rgba(255,215,64,.5);
+            box-shadow:
+                0 0 24px rgba(255,215,64,.08),
+                inset 0 0 24px rgba(255,215,64,.04);
+        }
+
+        .panel.featured .panel-label { color: #ffd740; text-shadow: 0 0 8px #ffd740; }
+        .panel.featured::after { border-color: #ffd740; }
+
+        .group-section-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 8px var(--neon-cyan);
+            margin: 32px 0 14px;
+        }
 
         .group-card-head {
             display: flex;
@@ -236,10 +251,10 @@
             color: var(--neon-green);
         }
 
-        .group-card-sub {
+        .group-card-handle {
             font-size: 0.7rem;
             letter-spacing: 1px;
-            color: #556;
+            color: var(--neon-cyan);
             margin-top: 4px;
         }
 
@@ -378,7 +393,7 @@
         <div class="sub">// SCI-FI EDITION //</div>
         <h2 class="tagline">Groups.</h2>
         <p class="panel-desc" style="max-width: 600px; margin: 14px auto 0; text-align: center;">
-            JOIN THE TELEGRAM GROUPS AND FOLLOW ON X TO KEEP UP WITH SOLOCHANCE.ORG, SOLO100.ORG, AND BCH.EE PARASITE POOL.
+            ONE UMBRELLA COMMUNITY, PLUS A DEDICATED GROUP FOR EACH PRODUCT — JOIN THE ONES YOU CARE ABOUT.
         </p>
     </div>
 
@@ -394,17 +409,17 @@
 
     <hr class="hud-divider">
 
-    <!-- ── Bitcoin ──────────────────────────────────────────────────────── -->
-    <div class="panel">
-        <h3 class="panel-label">// BITCOIN //</h3>
+    <!-- ── Umbrella community ───────────────────────────────────────────── -->
+    <div class="panel featured">
+        <h3 class="panel-label">// SOLOCHANCE.ORG COMMUNITY //</h3>
         <div class="group-card-head">
-            <div class="group-card-icon btc"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <img class="group-card-logo" src="../images/logo-no-text-transparent.png" alt="SoloChance.org">
             <div>
-                <div class="group-card-title">BITCOIN</div>
-                <div class="group-card-sub">SOLOCHANCE.ORG &amp; SOLO100.ORG DISCUSSIONS</div>
+                <div class="group-card-title">SOLOCHANCE.ORG COMMUNITY</div>
+                <div class="group-card-handle">@SOLOCHANCEORG</div>
             </div>
         </div>
-        <p class="panel-desc">TALK CALCULATOR FEEDBACK, CURRENCY REQUESTS, AND SOLO100.ORG STRATEGY WITH OTHER BITCOIN SOLO MINERS.</p>
+        <p class="panel-desc">THE UMBRELLA GROUP FOR THE WHOLE SOLOCHANCE.ORG COMMUNITY. ASK QUESTIONS ABOUT SOLOCHANCE.ORG, CRYPTOCURRENCY MINING, RENTALS, AND MORE.</p>
         <div class="group-links">
             <a class="group-link telegram" href="https://t.me/solochanceorg" target="_blank" rel="noopener">
                 <i class="fa-brands fa-telegram" aria-hidden="true"></i> TELEGRAM
@@ -415,23 +430,61 @@
         </div>
     </div>
 
-    <!-- ── Bitcoin Cash ─────────────────────────────────────────────────── -->
+    <div class="group-section-label">// PRODUCT GROUPS //</div>
+
+    <!-- ── solo100.org ──────────────────────────────────────────────────── -->
     <div class="panel">
-        <h3 class="panel-label">// BITCOIN CASH //</h3>
+        <h3 class="panel-label">// SOLO100.ORG //</h3>
         <div class="group-card-head">
-            <div class="group-card-icon bch"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <img class="group-card-logo" src="https://solo100.org/images/logo-no-text-transparent.png" alt="solo100.org" onerror="this.style.display='none'">
             <div>
-                <div class="group-card-title">BITCOIN CASH</div>
-                <div class="group-card-sub">BCH.EE PARASITE POOL DISCUSSIONS</div>
+                <div class="group-card-title">SOLO100.ORG</div>
+                <div class="group-card-handle">@SOLO100ORG</div>
             </div>
         </div>
-        <p class="panel-desc">TALK POOL STATS, PAYOUTS, AND PARASITE-SCHEME STRATEGY WITH OTHER BITCOIN CASH SOLO MINERS.</p>
+        <p class="panel-desc">THE GROUP FOR THE SOLO100.ORG POOL — LEADERBOARD STRATEGY, SHARE SCORES, AND BEST 100 STANDINGS.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/solo100org" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> TELEGRAM
+            </a>
+        </div>
+    </div>
+
+    <!-- ── bch.ee Parasite Pool ─────────────────────────────────────────── -->
+    <div class="panel">
+        <h3 class="panel-label">// BCH.EE PARASITE POOL //</h3>
+        <div class="group-card-head">
+            <img class="group-card-logo" src="https://bch.ee/logo.svg" alt="bch.ee" onerror="this.style.display='none'">
+            <div>
+                <div class="group-card-title">BCH.EE PARASITE POOL</div>
+                <div class="group-card-handle">@PARABCHEE</div>
+            </div>
+        </div>
+        <p class="panel-desc">THE GROUP FOR THE BCH.EE PARASITE POOL — POOL STATS, PAYOUTS, AND PARASITE-SCHEME STRATEGY.</p>
         <div class="group-links">
             <a class="group-link telegram" href="https://t.me/parabchee" target="_blank" rel="noopener">
                 <i class="fa-brands fa-telegram" aria-hidden="true"></i> TELEGRAM
             </a>
             <a class="group-link x" href="https://x.com/parabch" target="_blank" rel="noopener">
                 <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> @PARABCH
+            </a>
+        </div>
+    </div>
+
+    <!-- ── bitcoincash.ee ───────────────────────────────────────────────── -->
+    <div class="panel">
+        <h3 class="panel-label">// BITCOINCASH.EE //</h3>
+        <div class="group-card-head">
+            <img class="group-card-logo" src="https://bitcoincash.ee/logo.svg" alt="bitcoincash.ee" onerror="this.style.display='none'">
+            <div>
+                <div class="group-card-title">BITCOINCASH.EE</div>
+                <div class="group-card-handle">@BITCOINCASHEE</div>
+            </div>
+        </div>
+        <p class="panel-desc">THE GROUP FOR THE BITCOINCASH.EE POOL — TOP 13 BEST SHARES STANDINGS AND POOL STRATEGY.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/bitcoincashee" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> TELEGRAM
             </a>
         </div>
     </div>
@@ -450,7 +503,7 @@
             <span><a href="sponsor.html">SPONSOR</a> &mdash; <a href="groups.html">GROUPS</a> &mdash; <a href="/terms.html">TERMS</a> &mdash; <a href="/privacy.html">PRIVACY</a></span>
         </div>
         <div class="footer-products">
-            OUR PRODUCTS: <a href="https://solo100.org" target="_blank" rel="noopener">SOLO100.ORG</a> &middot; <a href="https://bch.ee" target="_blank" rel="noopener">BCH.EE PARASITE POOL</a>
+            OUR PRODUCTS: <a href="https://solo100.org" target="_blank" rel="noopener">SOLO100.ORG</a> &middot; <a href="https://bch.ee" target="_blank" rel="noopener">BCH.EE PARASITE POOL</a> &middot; <a href="https://bitcoincash.ee" target="_blank" rel="noopener">BITCOINCASH.EE</a>
         </div>
         <div class="footer-bottom">
             <div>&copy; 2026 SOLOCHANCE.ORG</div>

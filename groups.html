@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SoloChance.org Telegram groups and X accounts — join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta name="description" content="SoloChance.org Telegram community — join the umbrella @solochanceorg group, or the dedicated groups for solo100.org, bch.ee Parasite Pool, and bitcoincash.ee.">
     <meta name="author" content="SoloChance.org">
     <meta name="google" content="notranslate">
 
@@ -12,14 +12,14 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://solochance.org/groups.html">
     <meta property="og:title"       content="Groups — SoloChance.org">
-    <meta property="og:description" content="SoloChance.org Telegram groups and X accounts — join the Bitcoin discussion (SoloChance.org, solo100.org) or the Bitcoin Cash discussion (bch.ee Parasite Pool).">
+    <meta property="og:description" content="SoloChance.org Telegram community — join the umbrella @solochanceorg group, or the dedicated groups for solo100.org, bch.ee Parasite Pool, and bitcoincash.ee.">
     <meta property="og:image"       content="https://solochance.org/images/logo-domain.png">
     <meta property="og:site_name"   content="SoloChance.org">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:site"        content="@solochanceorg">
     <meta name="twitter:title"       content="Groups — SoloChance.org">
-    <meta name="twitter:description" content="Join the SoloChance.org Telegram groups and X accounts.">
+    <meta name="twitter:description" content="Join the SoloChance.org Telegram community.">
     <meta name="twitter:image"       content="https://solochance.org/images/logo-domain.png">
 
     <link rel="icon" type="image/png" href="images/logo-no-text-transparent.png">
@@ -206,20 +206,36 @@
         }
 
         /* ── Group card ── */
-        .group-card-icon {
+        .group-card-logo {
             width: 44px;
             height: 44px;
+            object-fit: contain;
             border-radius: 10px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            color: #fff;
+            background: rgba(0,0,0,0.04);
+            padding: 6px;
+            box-sizing: border-box;
             flex-shrink: 0;
         }
 
-        .group-card-icon.btc { background: #F7931A; }
-        .group-card-icon.bch { background: #0AC18E; }
+        .panel.featured {
+            border-color: rgba(79,70,229,.3);
+            background: rgba(79,70,229,.03);
+        }
+
+        .group-card-handle {
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .group-section-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin: 32px 0 14px;
+        }
 
         .group-card-head {
             display: flex;
@@ -232,11 +248,6 @@
             font-size: 1.05rem;
             font-weight: 700;
             color: var(--text);
-        }
-
-        .group-card-sub {
-            font-size: 0.78rem;
-            color: var(--text-faint);
         }
 
         .group-links {
@@ -364,19 +375,19 @@
 
     <div class="tagline">
         <h1>Groups</h1>
-        <p class="panel-desc">Join the Telegram groups and follow on X to keep up with SoloChance.org, solo100.org, and bch.ee Parasite Pool.</p>
+        <p class="panel-desc">One umbrella community, plus a dedicated group for each product — join the ones you care about.</p>
     </div>
 
-    <!-- ── Bitcoin ──────────────────────────────────────────────────────── -->
-    <div class="panel">
+    <!-- ── Umbrella community ───────────────────────────────────────────── -->
+    <div class="panel featured">
         <div class="group-card-head">
-            <div class="group-card-icon btc"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <img class="group-card-logo" src="images/logo-no-text-transparent.png" alt="SoloChance.org">
             <div>
-                <div class="group-card-title">Bitcoin</div>
-                <div class="group-card-sub">SoloChance.org &amp; solo100.org discussions</div>
+                <div class="group-card-title">SoloChance.org Community</div>
+                <div class="group-card-handle">@solochanceorg</div>
             </div>
         </div>
-        <p class="panel-desc">Talk calculator feedback, currency requests, and solo100.org strategy with other Bitcoin solo miners.</p>
+        <p class="panel-desc">The umbrella group for the whole SoloChance.org community. Ask questions about SoloChance.org, cryptocurrency mining, rentals, and more.</p>
         <div class="group-links">
             <a class="group-link telegram" href="https://t.me/solochanceorg" target="_blank" rel="noopener">
                 <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
@@ -387,22 +398,58 @@
         </div>
     </div>
 
-    <!-- ── Bitcoin Cash ─────────────────────────────────────────────────── -->
+    <div class="group-section-label">Product Groups</div>
+
+    <!-- ── solo100.org ──────────────────────────────────────────────────── -->
     <div class="panel">
         <div class="group-card-head">
-            <div class="group-card-icon bch"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+            <img class="group-card-logo" src="https://solo100.org/images/logo-no-text-transparent.png" alt="solo100.org" onerror="this.style.display='none'">
             <div>
-                <div class="group-card-title">Bitcoin Cash</div>
-                <div class="group-card-sub">bch.ee Parasite Pool discussions</div>
+                <div class="group-card-title">solo100.org</div>
+                <div class="group-card-handle">@solo100org</div>
             </div>
         </div>
-        <p class="panel-desc">Talk pool stats, payouts, and Parasite-scheme strategy with other Bitcoin Cash solo miners.</p>
+        <p class="panel-desc">The group for the solo100.org Pool — leaderboard strategy, share scores, and Best 100 standings.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/solo100org" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
+            </a>
+        </div>
+    </div>
+
+    <!-- ── bch.ee Parasite Pool ─────────────────────────────────────────── -->
+    <div class="panel">
+        <div class="group-card-head">
+            <img class="group-card-logo" src="https://bch.ee/logo.svg" alt="bch.ee" onerror="this.style.display='none'">
+            <div>
+                <div class="group-card-title">bch.ee Parasite Pool</div>
+                <div class="group-card-handle">@parabchee</div>
+            </div>
+        </div>
+        <p class="panel-desc">The group for the bch.ee Parasite Pool — pool stats, payouts, and Parasite-scheme strategy.</p>
         <div class="group-links">
             <a class="group-link telegram" href="https://t.me/parabchee" target="_blank" rel="noopener">
                 <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
             </a>
             <a class="group-link x" href="https://x.com/parabch" target="_blank" rel="noopener">
                 <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> @parabch
+            </a>
+        </div>
+    </div>
+
+    <!-- ── bitcoincash.ee ───────────────────────────────────────────────── -->
+    <div class="panel">
+        <div class="group-card-head">
+            <img class="group-card-logo" src="https://bitcoincash.ee/logo.svg" alt="bitcoincash.ee" onerror="this.style.display='none'">
+            <div>
+                <div class="group-card-title">bitcoincash.ee</div>
+                <div class="group-card-handle">@bitcoincashee</div>
+            </div>
+        </div>
+        <p class="panel-desc">The group for the bitcoincash.ee Pool — Top 13 Best Shares standings and pool strategy.</p>
+        <div class="group-links">
+            <a class="group-link telegram" href="https://t.me/bitcoincashee" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram
             </a>
         </div>
     </div>
@@ -420,7 +467,7 @@
             <span><a href="/sponsor.html">Sponsor</a> · <a href="/groups.html">Groups</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></span>
         </div>
         <div class="footer-products">
-            Our products: <a href="https://solo100.org" target="_blank" rel="noopener">solo100.org</a> · <a href="https://bch.ee" target="_blank" rel="noopener">bch.ee Parasite Pool</a>
+            Our products: <a href="https://solo100.org" target="_blank" rel="noopener">solo100.org</a> · <a href="https://bch.ee" target="_blank" rel="noopener">bch.ee Parasite Pool</a> · <a href="https://bitcoincash.ee" target="_blank" rel="noopener">bitcoincash.ee</a>
         </div>
         <div class="footer-bottom">
             <div>© 2026 SoloChance.org</div>

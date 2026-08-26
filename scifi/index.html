@@ -489,73 +489,6 @@
             .theme-text { display: none; }
         }
 
-        /* ── Sponsor banner ── */
-        .sponsor-banner {
-            border-color: rgba(255,215,64,.35);
-            box-shadow:
-                0 0 20px rgba(255,215,64,.06),
-                inset 0 0 20px rgba(255,215,64,.03);
-        }
-
-        .sponsor-banner::before { color: #ffd740; text-shadow: 0 0 8px #ffd740; }
-
-        .sponsor-banner-body {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .sponsor-banner-icon {
-            font-size: 1.6rem;
-            flex-shrink: 0;
-        }
-
-        .sponsor-banner-content p {
-            font-size: 0.78rem;
-            color: #889;
-            letter-spacing: 0.3px;
-            line-height: 1.6;
-            margin-bottom: 6px;
-        }
-
-        .sponsor-banner-link {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.68rem;
-            letter-spacing: 1.5px;
-            color: var(--neon-green);
-            text-decoration: none;
-        }
-
-        .sponsor-banner-link:hover { text-shadow: 0 0 6px var(--neon-green); }
-
-        .sponsor-ribbon-wrap {
-            position: absolute;
-            bottom: 0; right: 0;
-            width: 90px; height: 90px;
-            overflow: hidden;
-        }
-
-        .sponsor-ribbon {
-            position: absolute;
-            bottom: 16px;
-            right: -34px;
-            width: 130px;
-            transform: rotate(-45deg);
-            background: #ffd740;
-            color: #000;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.55rem;
-            font-weight: 700;
-            letter-spacing: .06em;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 4px 0;
-        }
-
-        @media (max-width: 700px) {
-            .sponsor-banner-body { flex-wrap: wrap; }
-        }
-
         /* ── Donate panel ── */
         #coffee-donate {
             opacity: 0;
@@ -685,23 +618,9 @@
         <a href="pools.html">[ CURATED POOLS ]</a>
         &nbsp;&middot;&nbsp;
         <a href="groups.html">[ GROUPS ]</a>
-        &nbsp;&middot;&nbsp;
-        <a href="sponsor.html">[ SPONSOR ]</a>
     </div>
 
     <hr class="hud-divider">
-
-    <!-- ── Sponsor banner ── -->
-    <div class="panel sponsor-banner" data-label="SPONSOR">
-        <div class="sponsor-banner-body">
-            <div class="sponsor-banner-icon" aria-hidden="true">📢</div>
-            <div class="sponsor-banner-content">
-                <p>YOUR LOGO, TEXT, AND A LINK OF YOUR CHOICE, SHOWN IN THIS EXACT SPOT — ONLY 0.01 BTC/YEAR. THE ONLY SPONSORSHIP BANNER ON SOLOCHANCE.ORG.</p>
-                <a class="sponsor-banner-link" href="sponsor.html">[ LEARN MORE ]</a>
-            </div>
-        </div>
-        <div class="sponsor-ribbon-wrap"><div class="sponsor-ribbon">Sponsor</div></div>
-    </div>
 
     <div class="panel" data-label="TARGETING SYSTEM">
         <div class="form-grid">
@@ -865,7 +784,7 @@
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 HELLO@SOLOCHANCE.ORG
             </a>
-            <span><a href="../index.html">BACK TO NORMAL REALITY</a> &mdash; <a href="sponsor.html">SPONSOR</a> &mdash; <a href="groups.html">GROUPS</a> &mdash; <a href="/terms.html">TERMS</a> &mdash; <a href="/privacy.html">PRIVACY</a></span>
+            <span><a href="../index.html">BACK TO NORMAL REALITY</a> &mdash; <a href="groups.html">GROUPS</a> &mdash; <a href="/terms.html">TERMS</a> &mdash; <a href="/privacy.html">PRIVACY</a></span>
         </div>
         <div class="footer-products">
             OUR PRODUCTS: <a href="https://solo100.org" target="_blank" rel="noopener">SOLO100.ORG</a> &middot; <a href="https://bch.ee" target="_blank" rel="noopener">BCH.EE PARASITE POOL</a> &middot; <a href="https://bitcoincash.ee" target="_blank" rel="noopener">BITCOINCASH.EE</a>

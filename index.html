@@ -589,6 +589,120 @@
         .result-table.animate tbody tr:nth-child(13) { animation-delay: 0.52s; }
         .result-table.animate tbody tr:nth-child(14) { animation-delay: 0.56s; }
 
+        /* ── Announcement banner ────────────────────────────────────── */
+        .announcement-panel {
+            background: rgba(247, 147, 26, 0.04);
+            border-color: rgba(247, 147, 26, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: #F7931A;
+            border-radius: var(--radius) 0 0 var(--radius);
+        }
+
+        .announcement-body {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 12px;
+        }
+
+        .announcement-logo-wrap {
+            position: relative;
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+        }
+
+        .announcement-logo {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+        }
+
+        .announcement-content { flex: 1; min-width: 0; }
+
+        .announcement-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .announcement-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #F7931A;
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            padding: 2px 8px;
+            border-radius: 999px;
+            flex-shrink: 0;
+        }
+
+        .announcement-title a { color: #F7931A; font-weight: 700; }
+        .announcement-title a:hover { color: #d97a10; }
+
+        .announcement-text {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .announcement-cta {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 20px;
+            background: #F7931A;
+            color: #fff;
+            border-radius: 7px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .18s, box-shadow .18s;
+        }
+
+        .announcement-cta:hover {
+            background: #d97a10;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(247,147,26,.35);
+        }
+
+        /* ── Announcement banner: Bitcoin Cash variant ─────────────────── */
+        .announcement-panel.bch {
+            background: rgba(10, 193, 142, 0.04);
+            border-color: rgba(10, 193, 142, 0.3);
+        }
+
+        .announcement-panel.bch::before { background: #0AC18E; }
+
+        .announcement-panel.bch .announcement-badge { background: #0AC18E; }
+
+        .announcement-panel.bch .announcement-title a { color: #0AC18E; }
+        .announcement-panel.bch .announcement-title a:hover { color: #089b73; }
+
+        .announcement-panel.bch .announcement-cta { background: #0AC18E; }
+
+        .announcement-panel.bch .announcement-cta:hover {
+            background: #089b73;
+            box-shadow: 0 4px 12px rgba(10,193,142,.35);
+        }
+
         /* ── Responsive ──────────────────────────────────────────────── */
         @media (max-width: 640px) {
             .panel { padding: 18px 16px; }
@@ -610,6 +724,9 @@
             }
 
             .portal-text { display: none; }
+
+            .announcement-body { flex-wrap: wrap; }
+            .announcement-cta { width: 100%; justify-content: center; margin-top: 4px; }
         }
     </style>
 </head>
@@ -654,6 +771,46 @@
     <!-- ── Tagline ──────────────────────────────────────────────────────── -->
     <div class="tagline">
         <p>Calculate the chance of hitting a block for all cryptocurrencies when solo mining.</p>
+    </div>
+
+    <!-- ── Announcement: solo100.org ───────────────────────────────────── -->
+    <div id="announcement-btc" style="display:none;">
+        <p style="font-size:0.82em;font-style:italic;color:var(--text-muted);margin:0 0 6px 2px;">SoloChance.org proudly presents:<br>a brand-new pool with a payment scheme like no other, the world's first Bitcoin mining meta-game</p>
+        <div class="panel announcement-panel">
+            <div class="announcement-body">
+                <div class="announcement-logo-wrap">
+                    <img src="https://solo100.org/images/logo-no-text-transparent.png" alt="solo100.org" class="announcement-logo">
+                </div>
+                <div class="announcement-content">
+                    <div class="announcement-title">
+                        <span class="announcement-badge">NEW</span>
+                        <a href="https://solo100.org" target="_blank" rel="noopener">solo100.org</a>: The most exciting Bitcoin pool to join.
+                    </div>
+                    <div class="announcement-text" id="announcement-text"></div>
+                </div>
+                <a class="announcement-cta" href="https://solo100.org" target="_blank" rel="noopener">Visit solo100.org &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Announcement: bitcoincash.ee ─────────────────────────────────── -->
+    <div id="announcement-bch" style="display:none;">
+        <p style="font-size:0.82em;font-style:italic;color:var(--text-muted);margin:0 0 6px 2px;">SoloChance.org proudly presents:<br>a brand-new pool with a payment scheme like no other, the world's first Bitcoin Cash mining meta-game</p>
+        <div class="panel announcement-panel bch">
+            <div class="announcement-body">
+                <div class="announcement-logo-wrap">
+                    <img src="https://bitcoincash.ee/logo.svg" alt="bitcoincash.ee" class="announcement-logo">
+                </div>
+                <div class="announcement-content">
+                    <div class="announcement-title">
+                        <span class="announcement-badge">NEW</span>
+                        <a href="https://bitcoincash.ee" target="_blank" rel="noopener">bitcoincash.ee</a>: The most exciting Bitcoin Cash pool to join.
+                    </div>
+                    <div class="announcement-text" id="announcement-text-bch"></div>
+                </div>
+                <a class="announcement-cta" href="https://bitcoincash.ee" target="_blank" rel="noopener">Visit bitcoincash.ee &rarr;</a>
+            </div>
+        </div>
     </div>
 
     <!-- ── Calculator ───────────────────────────────────────────────────── -->
@@ -1163,6 +1320,38 @@
             el.addEventListener('input', markStale);
         }
     });
+}());
+</script>
+<script>
+(function(){
+    var banners = {
+        btc: {
+            textEl: 'announcement-text',
+            texts: [
+                "A pool specifically engineered for your Bitaxe and any small hashrate miner.",
+                "A pool where your few T difficulty shares actually matter.",
+                "A pool, a game, both: claim your position in Best 100 and win a reward in Bitcoin.",
+                "What happens if 100 friends hash for each other and split the reward when they find a block? solo100.org.",
+                "Finally, a pool for small hashrate devices — no dust from proportional pools, no impossible odds of solo mining."
+            ]
+        },
+        bch: {
+            textEl: 'announcement-text-bch',
+            texts: [
+                "A pool specifically engineered for your Bitaxe and any small hashrate miner.",
+                "A pool where your few G difficulty shares actually matter.",
+                "A pool, a game, both: claim your position in the Top 13 and win a reward in Bitcoin Cash.",
+                "What happens if 13 friends hash for each other and split the reward when they find a block? bitcoincash.ee.",
+                "Finally a pool for small hashrate devices — no dust from proportional pools, no impossible odds of solo mining.",
+                "The most likely pool to mine your first $10 worth of Bitcoin Cash with a Bitaxe."
+            ]
+        }
+    };
+
+    var key = Math.random() < 0.5 ? 'btc' : 'bch';
+    var chosen = banners[key];
+    document.getElementById(key === 'btc' ? 'announcement-btc' : 'announcement-bch').style.display = '';
+    document.getElementById(chosen.textEl).textContent = chosen.texts[Math.floor(Math.random() * chosen.texts.length)];
 }());
 </script>
 </body>

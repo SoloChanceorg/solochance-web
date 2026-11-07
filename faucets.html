@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Testnet faucets from SoloChance.org — get free testnet coins for development and testing, starting with TestnetCasino.com, a Bitcoin Cash Testnet4 faucet.">
+    <meta name="author" content="SoloChance.org">
+    <meta name="google" content="notranslate">
+
+    <link rel="canonical" href="https://solochance.org/faucets.html">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://solochance.org/faucets.html">
+    <meta property="og:title"       content="Faucets — SoloChance.org">
+    <meta property="og:description" content="Testnet faucets from SoloChance.org — get free testnet coins for development and testing, starting with TestnetCasino.com, a Bitcoin Cash Testnet4 faucet.">
+    <meta property="og:image"       content="https://solochance.org/images/logo-domain.png">
+    <meta property="og:site_name"   content="SoloChance.org">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@solochanceorg">
+    <meta name="twitter:title"       content="Faucets — SoloChance.org">
+    <meta name="twitter:description" content="Testnet faucets from SoloChance.org — get free testnet coins for development and testing, starting with TestnetCasino.com, a Bitcoin Cash Testnet4 faucet.">
+    <meta name="twitter:image"       content="https://solochance.org/images/logo-domain.png">
+
+    <link rel="icon" type="image/png" href="images/logo-no-text-transparent.png">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+          crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Faucets — SoloChance.org</title>
+
+    <style>
+        /* ── Design tokens ───────────────────────────────────────────── */
+        :root {
+            --accent:       #4f46e5;
+            --accent-dark:  #4338ca;
+            --surface:      #ffffff;
+            --bg:           #f1f5f9;
+            --border:       #e2e8f0;
+            --text:         #0f172a;
+            --text-muted:   #64748b;
+            --text-faint:   #94a3b8;
+            --green:        #16a34a;
+            --green-dark:   #15803d;
+            --radius:       10px;
+            --shadow:       0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { font-size: 17px; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); }
+        a:hover { color: var(--accent-dark); }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 16px 80px;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            text-align: center;
+            padding: 44px 0 24px;
+        }
+
+        .site-header img {
+            max-height: 148px;
+            width: auto;
+            mix-blend-mode: multiply;
+        }
+
+        .header-pills {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .social-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: border-color .2s, color .2s;
+        }
+
+        .social-pill:hover { border-color: var(--accent); color: var(--accent); }
+        .social-pill.active { border-color: var(--accent); color: var(--accent); background: rgba(79,70,229,.05); }
+
+        /* ── Theme portal ── */
+        .theme-portal {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 200;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 48px;
+            background: #000;
+            border: 1px solid rgba(0,245,255,.35);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            color: #00f5ff;
+            text-decoration: none;
+            overflow: hidden;
+            box-shadow: 0 0 18px rgba(0,245,255,.15), inset 0 0 18px rgba(0,245,255,.04);
+            transition: border-color .3s, box-shadow .3s;
+        }
+
+        .theme-portal:hover {
+            border-color: #00f5ff;
+            color: #00f5ff;
+            box-shadow: 0 0 32px rgba(0,245,255,.35), inset 0 0 24px rgba(0,245,255,.08);
+        }
+
+        .portal-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        .portal-label {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-shadow: 0 0 10px rgba(0,245,255,.7);
+        }
+
+        .portal-text { white-space: nowrap; }
+
+        /* ── Tagline ── */
+        .tagline {
+            text-align: center;
+            padding: 20px 16px 26px;
+            border-top: 1px solid var(--border);
+            margin-top: 10px;
+        }
+
+        /* ── Panel ── */
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px 28px;
+            margin-bottom: 20px;
+        }
+
+        .panel-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin: 0 0 6px;
+        }
+
+        .tagline h1 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .panel-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* ── Pool table ── */
+        .pool-table-wrap {
+            overflow-x: auto;
+        }
+
+        .pool-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 580px;
+        }
+
+        .pool-table thead th {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            padding: 0 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .pool-table thead th.th-stat { text-align: center; }
+        .pool-table thead th.th-action { text-align: right; }
+
+        .pool-table tbody tr { border-bottom: 1px solid var(--border); }
+        .pool-table tbody tr:last-child { border-bottom: none; }
+        .pool-table tbody tr:hover { background: #f8fafc; }
+
+        .pool-table tbody td {
+            padding: 14px 12px;
+            font-size: 0.875rem;
+            vertical-align: middle;
+        }
+
+        /* Pool name cell */
+        .pool-name-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pool-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 6px;
+            flex-shrink: 0;
+            background: rgba(0,0,0,0.04);
+            padding: 3px;
+            box-sizing: border-box;
+        }
+
+        .pool-name-link {
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .pool-name-link:hover { color: var(--accent); }
+
+        /* Description */
+        .pool-desc-cell {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Stat cells */
+        .stat-cell {
+            text-align: center;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        .stat-cell.pending { color: var(--text-faint); font-weight: 400; }
+
+        /* Action cell */
+        .action-cell { text-align: right; }
+
+        .btn-visit {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 16px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 7px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .18s, box-shadow .18s;
+        }
+
+        .btn-visit:hover {
+            background: var(--accent-dark);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(79,70,229,.35);
+        }
+
+        /* Placeholder rows */
+        .placeholder-row td {
+            color: var(--text-faint);
+            font-size: 0.82rem;
+        }
+
+        /* ── Footer ── */
+        #site-footer {
+            margin-top: 28px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            font-size: 0.82rem;
+            color: var(--text-faint);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.75rem;
+            flex-wrap: wrap;
+        }
+
+        #site-footer a { color: var(--text-faint); text-decoration: none; }
+        #site-footer a:hover { color: var(--accent); }
+
+        .footer-tg-link, .footer-email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-products, .footer-bottom {
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        .footer-bottom-sub { margin-top: 5px; }
+
+        @media (max-width: 640px) {
+            .footer-inner { flex-direction: column; gap: 10px; }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .panel { padding: 18px 16px; }
+
+            .theme-portal {
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                top: 12px;
+                right: 12px;
+            }
+
+            .portal-text { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<a class="theme-portal" href="scifi/faucets.html">
+    <canvas class="portal-canvas" id="portal-canvas"></canvas>
+    <span class="portal-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <span class="portal-text">Sci-Fi Theme</span>
+    </span>
+</a>
+
+<div class="page">
+
+    <header class="site-header">
+        <a href="/"><img src="images/logo-domain.png" alt="SoloChance.org — Solo Mining Chance Calculator"></a>
+        <div class="header-pills">
+            <a class="social-pill" href="/" >
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                Calculator
+            </a>
+            <a class="social-pill" href="/pools.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M3 6h18M3 12h18M3 18h18"/>
+                </svg>
+                Pools
+            </a>
+            <a class="social-pill active" href="/faucets.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
+                </svg>
+                Faucets
+            </a>
+            <a class="social-pill" href="/groups.html">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                Groups
+            </a>
+        </div>
+    </header>
+
+    <div class="tagline">
+        <h1>Testnet Faucets from SoloChance.org.</h1>
+    </div>
+
+    <!-- ── Testnet Faucets ─────────────────────────────────────────────── -->
+    <div class="panel">
+        <h2 class="panel-label">Testnet Faucets from SoloChance.org</h2>
+        <p class="panel-desc">Faucets built and hosted by SoloChance.org. Testnet coins have no monetary value — they exist so developers, miners and pool operators can test wallets, apps and infrastructure without risking real funds.</p>
+        <div class="pool-table-wrap">
+            <table class="pool-table">
+                <thead>
+                    <tr>
+                        <th>Faucet</th>
+                        <th>Description</th>
+                        <th class="th-action"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="pool-name-cell">
+                                <img src="https://testnetcasino.com/assets/img/bch-testnet4.svg" class="pool-logo" alt="testnetcasino.com" onerror="this.style.display='none'">
+                                <a class="pool-name-link" href="https://testnetcasino.com" target="_blank" rel="noopener">testnetcasino.com</a>
+                            </div>
+                        </td>
+                        <td class="pool-desc-cell">TestnetCasino.com is a Bitcoin Cash Testnet4 faucet with slot machines. Spin the reels, win tBCH and withdraw it to your Testnet4 address. New accounts get a 0.0001 tBCH sign-up bonus plus a 0.00001 tBCH daily bonus. Not a real casino: no real money, no mainnet crypto and no deposits of any kind.</td>
+                        <td class="action-cell"><a class="btn-visit" href="https://testnetcasino.com" target="_blank" rel="noopener">Visit →</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer id="site-footer">
+        <div class="footer-inner">
+            <a class="footer-tg-link" href="https://t.me/solochanceorg" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                t.me/solochanceorg
+            </a>
+            <a class="footer-email-link" href="mailto:hello@solochance.org">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                hello@solochance.org
+            </a>
+            <span><a href="/groups.html">Groups</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></span>
+        </div>
+        <div class="footer-products">
+            Our products: <a href="https://solo100.org" target="_blank" rel="noopener">solo100.org</a> · <a href="https://bch.ee" target="_blank" rel="noopener">bch.ee Parasite Pool</a> · <a href="https://bitcoincash.ee" target="_blank" rel="noopener">bitcoincash.ee</a> · <a href="https://testnetcasino.com" target="_blank" rel="noopener">testnetcasino.com</a>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 SoloChance.org</div>
+            <div class="footer-bottom-sub">Built in 🇪🇪 Estonia · Hosted in 🇩🇪 Germany</div>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+(function () {
+    const canvas = document.getElementById('portal-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+
+    function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+    }
+
+    function initStars() {
+        stars = [];
+        for (let i = 0; i < 90; i++) {
+            stars.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 1.1 + 0.2,
+                speed: Math.random() * 0.45 + 0.08,
+                opacity: Math.random()
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        stars.forEach(s => {
+            s.y += s.speed;
+            if (s.y > H) { s.y = 0; s.x = Math.random() * W; }
+            s.opacity += (Math.random() - 0.5) * 0.025;
+            s.opacity = Math.max(0.1, Math.min(1, s.opacity));
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0, 245, 255, ${s.opacity * 0.65})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    initStars();
+    draw();
+    window.addEventListener('resize', () => { resize(); initStars(); });
+}());
+</script>
+
+</body>
+</html>

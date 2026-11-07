@@ -30,6 +30,20 @@
     </url>
 
     <url>
+        <loc>https://solochance.org/faucets.html</loc>
+        <lastmod>2026-11-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://solochance.org/scifi/faucets.html</loc>
+        <lastmod>2026-11-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
         <loc>https://solochance.org/groups.html</loc>
         <lastmod>2026-08-22</lastmod>
         <changefreq>weekly</changefreq>
